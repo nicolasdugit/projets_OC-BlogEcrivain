@@ -11,7 +11,19 @@
     <title>Billet simple pour l'Alaska</title>
   </head>
   <body>
-    <h1 class="text-white" >Blog de Jean Forteroche</h1>
+  	<div class="container-fluid">
+  		<header class="row">
+  			<div class="col-lg-6">
+    			<h1 class="text-white text-capitalize">Billet simple pour l'Alaska</h1>
+    			<h2 class="text-white-50">Blog de Jean Forteroche</h2>
+  			</div>
+  			<div class="col-lg-6">
+  				<nav class="navbar">
+  					
+  				</nav>
+  			</div>
+  		</header>
+	</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
