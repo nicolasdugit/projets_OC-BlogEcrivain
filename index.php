@@ -11,7 +11,8 @@
     <title>Billet simple pour l'Alaska</title>
   </head>
   <body>
-    <h1 class="text-white" >Blog de Jean Forteroche</h1>
+    <h1 class="text-white text-center">Blog de Jean Forteroche</h1>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
