@@ -7,11 +7,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
+	<link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Billet simple pour l'Alaska</title>
   </head>
   <body>
-    <h1>Blog de Jean Forteroche</h1>
+    <h1 class="text-white" >Blog de Jean Forteroche</h1>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
