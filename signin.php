@@ -36,8 +36,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">User access</li>
+			<li><a href="index.php">Accueil</a></li>
+			<li class="active">Se Connecter</li>
 		</ol>
 
 		<div class="row">

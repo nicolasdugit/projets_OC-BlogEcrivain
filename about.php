@@ -36,8 +36,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">About</li>
+			<li><a href="index.php">Accueil</a></li>
+			<li class="active">À propos de l'auteur</li>
 		</ol>
 
 		<div class="row">

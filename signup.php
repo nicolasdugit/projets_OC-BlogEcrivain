@@ -36,8 +36,8 @@
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">Registration</li>
+			<li><a href="index.php">Accueil</a></li>
+			<li class="active">Créer un compte</li>
 		</ol>
 
 		<div class="row">
