@@ -9,7 +9,7 @@
 						<a href="about.php">À propos de l'auteur</a> |
 						<a href="blog.php">BLOG</a> |
 						<b><a href="signup.php">Inscription</a></b> |
-						<a href="#">Admin</a> |
+						<a href="admin/admin.php">Admin</a> |
 					</p>
 				</div>
 			</div>
