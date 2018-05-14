@@ -7,7 +7,7 @@
 					<p class="simplenav">
 						<a href="index.php">Accueil</a> | 
 						<a href="about.php">À propos de l'auteur</a> |
-						<a href="blog.php">Billets</a> |
+						<a href="blog.php">BLOG</a> |
 						<b><a href="signup.php">Inscription</a></b> |
 						<a href="#">Admin</a> |
 					</p>
