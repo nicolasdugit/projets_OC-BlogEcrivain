@@ -45,7 +45,7 @@
 			<!-- Article main content -->
 			<article class="col-md-8 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
+					<h1 class="page-title">Chapitre Premier</h1>
 				</header>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, itaque, cumque, maxime obcaecati reprehenderit ea dignissimos amet voluptatem id excepturi facilis totam veritatis maiores eveniet neque explicabo temporibus quisquam in ex ab fugiat ipsa tempore sunt corporis nostrum quam illum!</p>
 				<p>Consectetur cupiditate labore repudiandae beatae nisi fugiat facilis natus illum vitae doloremque. In, perspiciatis, natus, impedit voluptas itaque odio repudiandae placeat nisi totam repellendus earum dolores mollitia tempore quasi beatae alias cum dicta maxime laborum corporis harum porro magnam laboriosam.</p>
@@ -70,19 +70,14 @@
 
 				<div class="row widget">
 					<div class="col-xs-12">
-						<h4>Lorem ipsum dolor sit</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ratione delectus reiciendis nulla nisi pariatur molestias animi eos repellat? Vel.</p>
-					</div>
-				</div>
-				<div class="row widget">
-					<div class="col-xs-12">
-						<h4>Lorem ipsum dolor sit</h4>
+						<h4>Chapitre 2</h4>
 						<p><img src="assets/images/1.jpg" alt=""></p>
+						<p>Qui, debitis, ad, neque reprehenderit laborum soluta dolor voluptate eligendi enim consequuntur eveniet recusandae rerum? Atque eos corporis provident tenetur.</p>
 					</div>
 				</div>
 				<div class="row widget">
 					<div class="col-xs-12">
-						<h4>Lorem ipsum dolor sit</h4>
+						<h4>Chapitre 3</h4>
 						<p><img src="assets/images/2.jpg" alt=""></p>
 						<p>Qui, debitis, ad, neque reprehenderit laborum soluta dolor voluptate eligendi enim consequuntur eveniet recusandae rerum? Atque eos corporis provident tenetur.</p>
 					</div>
