@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	<meta name="description" content="Blog de Jean Forteroche. L'auteur vous livre ici son dernier roman sous forme de blog où il publie semaine apres semaine ses derniers chapitres">
+	<meta name="author"      content="Jean forteroche (www.blog-ecrivain.nicolasduquesne.com)">
 	
 	<title>Jean Forteroche - BILLET SIMPLE POUR L'ALASKA</title>
 

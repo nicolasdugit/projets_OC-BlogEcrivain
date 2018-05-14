@@ -62,9 +62,9 @@
 				<h3>Numquam, ut iure quia facere totam quas odit illo incidunt</h3>
 				<p>Est, maiores, fuga sed nemo qui veritatis ducimus placeat odit quisquam dolorum. Rem, sunt, praesentium veniam maiores quia molestias eos fugit eaque ducimus veritatis provident assumenda. Quia, fuga, voluptates voluptatibus quis enim nam asperiores aliquam dignissimos ullam recusandae debitis iste.</p>
 				<p>Dignissimos, beatae, praesentium illum eos autem perspiciatis? Minus, non, tempore, illo, mollitia exercitationem tempora quas harum odio dolores delectus quidem laudantium adipisci ducimus ullam placeat eaque minima quae iure itaque corporis magni nesciunt eius sed dolor doloremque id quasi nisi.</p>
+			<?php include('includes/comments.php');?>
 			</article>
 			<!-- /Article -->
-			
 			<!-- Sidebar -->
 			<aside class="col-md-4 sidebar sidebar-right">
 
