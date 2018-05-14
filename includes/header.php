@@ -3,7 +3,7 @@
 		<div class="row">
 			<h1 class="lead">BILLET SIMPLE POUR L'ALASKA</h1>
 			<p class="tagline">Jean Forteroche</p>
-			<p><a class="btn btn-default btn-lg" role="button">LIRE MON LIVRE</a> <!-- <a class="btn btn-action btn-lg" role="button">INSCRIPTION</a> --></p>
+			<p><a href="blog.php" class="btn btn-default btn-lg" role="button">LIRE MON LIVRE</a> <!-- <a class="btn btn-action btn-lg" role="button">INSCRIPTION</a> --></p>
 		</div>
 	</div>
 </header>
