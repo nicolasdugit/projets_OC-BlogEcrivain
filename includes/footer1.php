@@ -8,7 +8,7 @@
 					<p>
 						<a href="mailto:#">contact@nicolasduquesne.com</a><br>
 						<br>
-						Fairbanks, AK, ALaska.
+						Fairbanks, AK, Alaska.
 					</p>	
 				</div>
 			</div>

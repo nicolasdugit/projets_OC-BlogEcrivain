@@ -45,54 +45,43 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Registration</h1>
+					<h1 class="page-title">Créer un compte</h1>
 				</header>
 				
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3 class="thin text-center">Register a new account</h3>
-							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signin.html">Login</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+							<h3 class="thin text-center">Créer un nouveau compte</h3>
+							<p class="text-center text-muted">Vous avez déjà un compte ? <a href="signin.php">Connectez vous</a> avec vos identifiants </p>
 							<hr>
 
 							<form>
 								<div class="top-margin">
-									<label>First Name</label>
+									<label>Prénom</label>
 									<input type="text" class="form-control">
 								</div>
 								<div class="top-margin">
-									<label>Last Name</label>
+									<label>Nom</label>
 									<input type="text" class="form-control">
 								</div>
 								<div class="top-margin">
-									<label>Email Address <span class="text-danger">*</span></label>
+									<label>Courriel <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
-										<label>Password <span class="text-danger">*</span></label>
+										<label>Mot de passe <span class="text-danger">*</span></label>
 										<input type="text" class="form-control">
 									</div>
 									<div class="col-sm-6">
-										<label>Confirm Password <span class="text-danger">*</span></label>
+										<label>Confirmer le mot de passe <span class="text-danger">*</span></label>
 										<input type="text" class="form-control">
 									</div>
 								</div>
 
 								<hr>
 
-								<div class="row">
-									<div class="col-lg-8">
-										<label class="checkbox">
-											<input type="checkbox"> 
-											I've read the <a href="page_terms.html">Terms and Conditions</a>
-										</label>                        
-									</div>
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
-									</div>
-								</div>
 							</form>
 						</div>
 					</div>
