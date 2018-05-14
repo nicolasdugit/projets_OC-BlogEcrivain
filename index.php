@@ -50,16 +50,16 @@
 	<!-- container -->
 	<div class="container">
 
-		<h2 class="text-center top-space">DERNIERS ARTICLES POSTÉS</h2>
+		<h2 class="text-center top-space">DERNIERS CHAPITRES POSTÉS</h2>
 		<br>
 
 		<div class="row">
 			<div class="col-sm-6">
-				<h3>Article 1</h3>
+				<h3>Chapitre 1</h3>
 				<p>I'd highly recommend you a free to try text editor which I'm using daily. Awesome tool!</p>
 			</div>
 			<div class="col-sm-6">
-				<h3>Article 2</h3>
+				<h3>Chapitre 2</h3>
 				<p>
 					Well, there are thousands of stock art galleries, but personally, 
 					I prefer to use photos from these sites: Unsplash.com</a> 
@@ -69,14 +69,14 @@
 
 		<div class="row">
 			<div class="col-sm-6">
-				<h3>Articles 3</h3>
+				<h3>Chapitre 3</h3>
 				<p>
 					Yes, you can. You may use this template for any purpose, just don't forget about the license</a>, 
 					which says: "You must give appropriate credit", i.e. you must provide the name of the creator and a link to the original template in your work. 
 				</p>
 			</div>
 			<div class="col-sm-6">
-				<h3>Article 4</h3>
+				<h3>Chapitre 4</h3>
 				<p>Yes, I can. Please drop me a line to sergey-at-pozhilov.com and describe your needs in details. Please note, my services are not cheap.</p>
 			</div>
 		</div> <!-- /row -->
