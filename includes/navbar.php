@@ -9,7 +9,7 @@
 			<ul class="nav navbar-nav pull-right">
 				<li class="active"><a href="index.php">Accueil</a></li>
 				<li><a href="about.php">À propos de l'auteur</a></li>
-				<li><a href="sidebar-right.php">Billets</a></li>
+				<li><a href="blog.php">Billets</a></li>
 				<li><a class="btn" href="signin.php">SE CONNECTER / CREER UN COMPTE</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
