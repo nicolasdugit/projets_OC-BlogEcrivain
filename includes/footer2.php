@@ -5,7 +5,7 @@
 			<div class="col-md-6 widget">
 				<div class="widget-body">
 					<p class="simplenav">
-						<a href="#">Accueil</a> | 
+						<a href="index.php">Accueil</a> | 
 						<a href="about.php">À propos de l'auteur</a> |
 						<a href="sidebar-right.php">Billets</a> |
 						<b><a href="signup.php">Inscription</a></b> |
