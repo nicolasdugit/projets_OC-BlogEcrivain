@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Sign up - Progressus Bootstrap template</title>
+	<title>Créer un compte - Blog de Jean Forteroche</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	

@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Right Sidebar template - Progressus Bootstrap template</title>
+	<title>Billet simple pour l'Alaska - Jean Forteroche</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
