@@ -6,10 +6,10 @@
 				<div class="widget-body">
 					<p class="simplenav">
 						<a href="index.php">Accueil</a> | 
-						<a href="about.php">À propos de l'auteur</a> |
-						<a href="blog.php">BLOG</a> |
-						<b><a href="signup.php">Inscription</a></b> |
-						<a href="admin/admin.php">Admin</a> |
+						<!-- <a href="about.php">À propos de l'auteur</a> | -->
+						<a href="index.php?action=listPosts">BLOG</a> |
+						<b><a href="index.php?action=inscriptionPage">Inscription</a></b> |
+						<!-- <a href="admin/admin.php">Admin</a> | -->
 					</p>
 				</div>
 			</div>
