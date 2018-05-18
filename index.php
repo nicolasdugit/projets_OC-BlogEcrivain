@@ -98,7 +98,7 @@ try {
         }
     }
     else {
-        listPosts();
+        postAccueil();
     }
 }
 catch(Exception $e) {

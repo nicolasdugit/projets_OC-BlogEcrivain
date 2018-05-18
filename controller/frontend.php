@@ -9,11 +9,18 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/MembersManager.php');
 
+function postAccueil()
+{
+    $postManager = new PostManager(); // Création d'un objet
+    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+
+    require('view/frontend/accueilView.php');
+}
 
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $posts = $postManager->getAllPosts(); // Appel d'une fonction de cet objet
 
     require('view/frontend/listPostsView.php');
 }
