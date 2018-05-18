@@ -30,7 +30,7 @@
                 <form action="index.php?action=updateComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>" method="post">
                     <div>
                         <label hidden for="author">Nouvel(le) auteur(e)</label><br />
-                        <input hidden type="text" id="author" name="author" <?= $_SESSION['pseudo'] ?> />
+                        <input hidden type="text" id="author" name="author" value="<?= $_SESSION['pseudo'] ?>" />
                     </div>
                     <div>
                         <label for="comment">Modifier le commentaire</label><br />
