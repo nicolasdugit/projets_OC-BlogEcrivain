@@ -1,97 +1,107 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Blog de Jean Forteroche. L'auteur vous livre ici son dernier roman sous forme de blog où il publie semaine apres semaine ses derniers chapitres">
-	<meta name="author"      content="Jean forteroche (www.blog-ecrivain.nicolasduquesne.com)">
-	
-	<title>Jean Forteroche - BILLET SIMPLE POUR L'ALASKA</title>
+<?php
+session_start();
+require('controller/frontend.php');
 
-	<!-- <link rel="shortcut icon" href="assets/images/gt_favicon.png"> -->
-	
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+try {
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'listPosts') {
+            listPosts();
+        }
+        elseif ($_GET['action'] == 'post') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                post();
+            }
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'addComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                    addComment(htmlspecialchars($_GET['id']), htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']));
+                }
+                else {
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+            }
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }
 
-	<!-- Custom styles for our template -->
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="assets/css/main.css">
+        elseif ($_GET['action'] == 'selectComment') {
+            if (isset($_GET['comId']) && $_GET['comId'] > 0) {
+                if (isset($_GET['postId']) && $_GET['postId'] > 0) {
+                    selectComment();
+                }
+                else{
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
+            }
+            else{
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'updateComment') {
+            if (isset($_GET['comId']) && $_GET['comId'] > 0) {
+                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                    updateComment(htmlspecialchars($_GET['comId']), htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']), htmlspecialchars($_GET['postId']));
+                }
+                else {
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'connectionPage') {
+            connectionPage();
+        }
+        elseif ($_GET['action'] == 'connection') {
+            if ($_POST['pseudo'] && $_POST['pass']) {
+                connection(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']));
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'deconnection') {
+            if ($_SESSION['pseudo']) {
+                deconnection();
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'inscriptionPage') {
+            inscriptionPage();
+        }
+        elseif ($_GET['action'] == 'inscription') {
+            if ($_POST['pseudo'] && $_POST['pass'] && $_POST['mail']) {
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
-</head>
-
-<body class="home">
-	<!-- Fixed navbar -->
-	<?php include('includes/navbar.php'); ?>
-	<!-- /.navbar -->
-	<!-- Header -->
-	<?php include('includes/header.php'); ?>
-	<!-- /Header -->
-
-	<!-- Intro -->
-	<div class="container text-center">
-		<br> <br>
-		<h2 class="thin">JEAN FORTEROCHE REPART EN VOYAGE</h2>
-		<p class="text-muted">
-			Vous avez aimez les précedentes aventures de votre auteur préféré ?<br> 
-			Jean Forteroche publie ici son nouveau livre 'Billet simple pour l'Alaska' sous forme de blog.
-		</p>
-	</div>
-	<!-- /Intro-->
-		
-
-	<!-- /Highlights -->
-
-	<!-- container -->
-	<div class="container">
-
-		<h2 class="text-center top-space">DERNIERS CHAPITRES POSTÉS</h2>
-		<br>
-
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Chapitre 1</h3>
-				<p>Curabitur est risus, lobortis a nulla eget, facilisis faucibus odio. Sed sagittis tristique metus vitae hendrerit. Fusce quis tellus turpis. Proin in nisi placerat quam egestas interdum. Vivamus id euismod diam, hendrerit fringilla felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin convallis nisl a eleifend posuere. Ut at tortor quis magna luctus tincidunt eget non est. </p>
-			</div>
-			<div class="col-sm-6">
-				<h3>Chapitre 2</h3>
-				<p>Etiam tempor ante nunc, ac rhoncus ipsum ultrices nec. Aenean porta tellus eget nisl malesuada, a pellentesque eros commodo. Donec turpis magna, vehicula ac congue sed, rutrum eu diam. Curabitur at vestibulum tellus, a semper risus. Sed in turpis vehicula, consectetur leo non, vehicula quam.</p>
-			</div>
-		</div> <!-- /row -->
-
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Chapitre 3</h3>
-				<p>Nam a aliquam nibh, eu auctor dolor. Morbi odio urna, vulputate id nisl vestibulum, ultricies porttitor lorem. Quisque luctus augue vitae rutrum mollis. Etiam cursus, neque vel auctor venenatis, risus lectus suscipit tellus, sit amet tincidunt erat dolor a nulla. Etiam augue magna, imperdiet in viverra ac, pellentesque nec justo. Suspendisse sed ornare sapien. </p>
-			</div>
-			<div class="col-sm-6">
-				<h3>Chapitre 4</h3>
-				<p>In lobortis mi sit amet magna condimentum, non rutrum nunc tincidunt. Suspendisse orci libero, placerat eu nisl nec, volutpat venenatis turpis. In non volutpat mi, sit amet mattis nunc. Ut tristique enim eu leo molestie gravida. Morbi pulvinar dolor nec felis mollis pulvinar. Proin fermentum in dolor id porttitor. </p>
-			</div>
-		</div> <!-- /row -->
-
-
-</div>	<!-- /container -->
-	<!-- Footer -->
-	<footer id="footer" class="top-space">
-		<?php include('includes/footer1.php') ;?>
-		<?php include('includes/footer2.php') ;?>
-	</footer>	
-	<!-- /Footer -->	
-
-
-
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/headroom.min.js"></script>
-	<script src="assets/js/jQuery.headroom.min.js"></script>
-	<script src="assets/js/template.js"></script>
-</body>
-</html>
+                if (($_POST['pass'] != $_POST['pass-confirm'])) {
+                    throw new Exception('Les mot des passes doivent etre identiques');
+                }
+                else {
+                    $_POST['mail'] = htmlspecialchars($_POST['mail']);
+                    if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail'])) {
+                        throw new Exception('Adresse mail non valide');
+                    } else {
+                        inscription(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']), htmlspecialchars($_POST['mail']));
+                    }
+                }
+            }
+            else {
+                throw new Exception('Veuillez remplir tous les champs');
+            }
+        }
+    }
+    else {
+        listPosts();
+    }
+}
+catch(Exception $e) {
+    $errorMessage = $e->getMessage();
+    require('view/frontend/errorView.php');
+}
