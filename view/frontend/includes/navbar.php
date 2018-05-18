@@ -8,9 +8,9 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav pull-right">
 				<li><a href="index.php">Accueil</a></li>
-				<li><a href="about.php">À propos de l'auteur</a></li>
-				<li><a href="blog.php">BLOG</a></li>
-				<li><a class="btn" href="signin.php">SE CONNECTER / CREER UN COMPTE</a></li>
+				<!-- <li><a href="about.php">À propos de l'auteur</a></li> -->
+				<li><a href="index.php?action=listPosts">BLOG</a></li>
+				<li><a class="btn" href="index.php?action=connectionPage">SE CONNECTER / CREER UN COMPTE</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
