@@ -50,30 +50,7 @@
 	<!-- container -->
 	<div class="container">
 
-		<h2 class="text-center top-space">DERNIERS CHAPITRES POSTÉS</h2>
-		<br>
 
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Chapitre 1</h3>
-				<p>Curabitur est risus, lobortis a nulla eget, facilisis faucibus odio. Sed sagittis tristique metus vitae hendrerit. Fusce quis tellus turpis. Proin in nisi placerat quam egestas interdum. Vivamus id euismod diam, hendrerit fringilla felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin convallis nisl a eleifend posuere. Ut at tortor quis magna luctus tincidunt eget non est. </p>
-			</div>
-			<div class="col-sm-6">
-				<h3>Chapitre 2</h3>
-				<p>Etiam tempor ante nunc, ac rhoncus ipsum ultrices nec. Aenean porta tellus eget nisl malesuada, a pellentesque eros commodo. Donec turpis magna, vehicula ac congue sed, rutrum eu diam. Curabitur at vestibulum tellus, a semper risus. Sed in turpis vehicula, consectetur leo non, vehicula quam.</p>
-			</div>
-		</div> <!-- /row -->
-
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Chapitre 3</h3>
-				<p>Nam a aliquam nibh, eu auctor dolor. Morbi odio urna, vulputate id nisl vestibulum, ultricies porttitor lorem. Quisque luctus augue vitae rutrum mollis. Etiam cursus, neque vel auctor venenatis, risus lectus suscipit tellus, sit amet tincidunt erat dolor a nulla. Etiam augue magna, imperdiet in viverra ac, pellentesque nec justo. Suspendisse sed ornare sapien. </p>
-			</div>
-			<div class="col-sm-6">
-				<h3>Chapitre 4</h3>
-				<p>In lobortis mi sit amet magna condimentum, non rutrum nunc tincidunt. Suspendisse orci libero, placerat eu nisl nec, volutpat venenatis turpis. In non volutpat mi, sit amet mattis nunc. Ut tristique enim eu leo molestie gravida. Morbi pulvinar dolor nec felis mollis pulvinar. Proin fermentum in dolor id porttitor. </p>
-			</div>
-		</div> <!-- /row -->
 
 
 </div>	<!-- /container -->
