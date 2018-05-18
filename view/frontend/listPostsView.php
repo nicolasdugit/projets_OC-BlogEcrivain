@@ -54,6 +54,7 @@
                                     <?= nl2br(htmlspecialchars($data['content'])) ?>
                                     <br />
                                 </p>
+                                <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></h6>
                             </div>
                         </div>
                 <?php
