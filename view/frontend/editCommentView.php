@@ -5,7 +5,7 @@
     <div class="container">
 
         <ol class="breadcrumb">
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.php">Accueil</a></li>
             <li class="active">Blog</li>
         </ol>
 
