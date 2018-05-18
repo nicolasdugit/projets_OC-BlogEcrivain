@@ -32,7 +32,6 @@
 	<!-- Header -->
 	<?php include('view/frontend/includes/header.php'); ?>
 	<!-- /Header -->
-
 	<!-- Intro -->
 	<div class="container text-center">
 		<br> <br>
@@ -44,6 +43,7 @@
 	</div>
 	<!-- /Intro-->
 		
+	<?= $content ?>
 
 	<!-- /Highlights -->
 
