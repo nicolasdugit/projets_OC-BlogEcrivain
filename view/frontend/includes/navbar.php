@@ -10,7 +10,20 @@
 				<li><a href="index.php">Accueil</a></li>
 				<!-- <li><a href="about.php">À propos de l'auteur</a></li> -->
 				<li><a href="index.php?action=listPosts">BLOG</a></li>
-				<li><a class="btn" href="index.php?action=connectionPage">SE CONNECTER / CREER UN COMPTE</a></li>
+				<?php 
+				if (isset($_SESSION['pseudo'])) {
+					?>
+						<li><a href="index.php?action=deconnection">Bonjour <?= $_SESSION['pseudo'] ?> Se déconnecter</a></li>
+					<?php
+				}
+				else {
+					?>
+					<li><a class="btn" href="index.php?action=connectionPage">SE CONNECTER / CREER UN COMPTE</a></li>
+					<?php
+				}
+				?>
+
+				
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
