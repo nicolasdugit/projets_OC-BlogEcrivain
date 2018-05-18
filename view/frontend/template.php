@@ -30,7 +30,14 @@
 	<?php include('view/frontend/includes/navbar.php'); ?>
 	<!-- /.navbar -->
 	<!-- Header -->
-	<?php include('view/frontend/includes/header.php'); ?>
+	<?php
+	if (!isset($_GET['action'])) {
+		include('view/frontend/includes/header.php');
+	} 
+	else {
+		include('view/frontend/includes/headerSecondary.php');
+	}
+	?>
 	<!-- /Header -->
 	<!-- Intro -->
 	<div class="container text-center">
