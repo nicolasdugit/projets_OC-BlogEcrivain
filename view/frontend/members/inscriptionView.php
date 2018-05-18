@@ -38,11 +38,11 @@
                                 <div class="row top-margin">
                                     <div class="col-sm-6">
                                         <label for="pass">Mot de passe <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" type="password" name="pass" id="pass" required>
+                                        <input type="password" class="form-control" type="password" name="pass" id="pass" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="pass-confirm">Confirmer le mot de passe <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" type="password" name="pass-confirm" id="pass-confirm" required>
+                                        <input type="password" class="form-control" type="password" name="pass-confirm" id="pass-confirm" required>
                                     </div>
                                 </div>
 
