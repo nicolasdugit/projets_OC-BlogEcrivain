@@ -29,8 +29,8 @@
                 <h4>Vous allez modifier le commentaire posté par <strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></h4>
                 <form action="index.php?action=updateComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>" method="post">
                     <div>
-                        <label for="author">Nouvel(le) auteur(e)</label><br />
-                        <input type="text" id="author" name="author" />
+                        <label hidden for="author">Nouvel(le) auteur(e)</label><br />
+                        <input hidden type="text" id="author" name="author" <?= $_SESSION['pseudo'] ?> />
                     </div>
                     <div>
                         <label for="comment">Modifier le commentaire</label><br />
