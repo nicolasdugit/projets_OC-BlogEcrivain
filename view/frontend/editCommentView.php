@@ -1,42 +1,52 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Retour au billet</a></p>
 
-<div class="news">
-    <h3>
-        <?= htmlspecialchars($post['title']) ?>
-        <em>le <?= $post['creation_date_fr'] ?></em>
-    </h3>
-    
-    <p>
-        <?= nl2br(htmlspecialchars($post['content'])) ?>
-    </p>
-</div>
+    <div class="container">
 
-<!-- ... -->
-    <?php 
-        if (isset($_SESSION['pseudo'])) {
-    ?>
+        <ol class="breadcrumb">
+            <li><a href="index.html">Accuel</a></li>
+            <li class="active">Blog</li>
+        </ol>
 
-<h4>Vous allez modifier le commentaire posté par <strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></h4>
-<form action="index.php?action=updateComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>" method="post">
-    <div>
-        <label for="author">Nouvel(le) auteur(e)</label><br />
-        <input type="text" id="author" name="author" />
+        <div class="row">
+
+            <article class="col-md-8 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
+                                 <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em> </h5>
+                </header>
+                                <p>
+                                    <?= nl2br(htmlspecialchars($post['content'])) ?>
+                                    <br />
+                                </p>
+            </article>
+
+            <aside class="col-md-4 sidebar sidebar-right">
+                 <?php 
+                if (isset($_SESSION['pseudo'])) {
+                ?>
+                <h4>Vous allez modifier le commentaire posté par <strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></h4>
+                <form action="index.php?action=updateComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>" method="post">
+                    <div>
+                        <label for="author">Nouvel(le) auteur(e)</label><br />
+                        <input type="text" id="author" name="author" />
+                    </div>
+                    <div>
+                        <label for="comment">Modifier le commentaire</label><br />
+                        <textarea rows="10" cols="45" id="comment" name="comment"><?= nl2br(htmlspecialchars($comment['comment'])) ?></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" />
+                    </div>
+                </form>
+                <?php
+                }
+                ?>
+            </aside>
+        </div>
     </div>
-    <div>
-        <label for="comment">Modifier le commentaire</label><br />
-        <textarea id="comment" name="comment"><?= nl2br(htmlspecialchars($comment['comment'])) ?></textarea>
-    </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>
-        <?php
-    }
-    ?>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

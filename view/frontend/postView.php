@@ -25,21 +25,21 @@
             <aside class="col-md-4 sidebar sidebar-right">
                 <?php
                 while ($comment = $comments->fetch()) 
-{
-?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
+                {
+                ?>
+                    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
 
-    <?php 
-    if (isset($_SESSION['pseudo'])) {
-        ?>
-            (<a href="index.php?action=selectComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">modifier</a>)</p>
-        <?php
-    }
-    ?>
+                    <?php 
+                    if (isset($_SESSION['pseudo'])) {
+                        ?>
+                            (<a href="index.php?action=selectComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">modifier</a>)</p>
+                        <?php
+                    }
+                    ?>
 
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-<?php
-}
+                    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+                <?php
+                }
 
                     if (isset($_SESSION['pseudo'])) {
                 ?>
