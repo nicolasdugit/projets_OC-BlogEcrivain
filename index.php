@@ -1,23 +1,107 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php
+session_start();
+require('controller/frontend.php');
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Billet simple pour l'Alaska</title>
-  </head>
-  <body>
-    <h1 class="text-white text-center">Blog de Jean Forteroche</h1>
+try {
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'listPosts') {
+            listPosts();
+        }
+        elseif ($_GET['action'] == 'post') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                post();
+            }
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'addComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                    addComment(htmlspecialchars($_GET['id']), htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']));
+                }
+                else {
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+            }
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }
 
+        elseif ($_GET['action'] == 'selectComment') {
+            if (isset($_GET['comId']) && $_GET['comId'] > 0) {
+                if (isset($_GET['postId']) && $_GET['postId'] > 0) {
+                    selectComment();
+                }
+                else{
+                    throw new Exception('Aucun identifiant de billet envoyé');
+                }
+            }
+            else{
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'updateComment') {
+            if (isset($_GET['comId']) && $_GET['comId'] > 0) {
+                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+                    updateComment(htmlspecialchars($_GET['comId']), htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']), htmlspecialchars($_GET['postId']));
+                }
+                else {
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'connectionPage') {
+            connectionPage();
+        }
+        elseif ($_GET['action'] == 'connection') {
+            if ($_POST['pseudo'] && $_POST['pass']) {
+                connection(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']));
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'deconnection') {
+            if ($_SESSION['pseudo']) {
+                deconnection();
+            }
+            else {
+                throw new Exception('Aucun identifiant de commentaire envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'inscriptionPage') {
+            inscriptionPage();
+        }
+        elseif ($_GET['action'] == 'inscription') {
+            if ($_POST['pseudo'] && $_POST['pass'] && $_POST['mail']) {
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
-</html>
+                if (($_POST['pass'] != $_POST['pass-confirm'])) {
+                    throw new Exception('Les mot des passes doivent etre identiques');
+                }
+                else {
+                    $_POST['mail'] = htmlspecialchars($_POST['mail']);
+                    if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail'])) {
+                        throw new Exception('Adresse mail non valide');
+                    } else {
+                        inscription(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']), htmlspecialchars($_POST['mail']));
+                    }
+                }
+            }
+            else {
+                throw new Exception('Veuillez remplir tous les champs');
+            }
+        }
+    }
+    else {
+        postAccueil();
+    }
+}
+catch(Exception $e) {
+    $errorMessage = $e->getMessage();
+    require('view/frontend/errorView.php');
+}
