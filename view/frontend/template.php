@@ -44,7 +44,7 @@
 		<br> <br>
 		<h2 class="thin">JEAN FORTEROCHE REPART EN VOYAGE</h2>
 		<p class="text-muted">
-			Vous avez aimez les précedentes aventures de votre auteur préféré ?<br> 
+			Vous avez aimé les précedentes aventures de votre auteur préféré ?<br> 
 			Jean Forteroche publie ici son nouveau livre 'Billet simple pour l'Alaska' sous forme de blog.
 		</p>
 	</div>
