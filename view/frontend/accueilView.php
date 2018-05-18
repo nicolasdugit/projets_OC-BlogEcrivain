@@ -2,10 +2,6 @@
 
 <?php ob_start(); ?>
 <h2 class="text-center top-space">Mon dernier chapitre</h2>
-    
-
-
-
 
 <?php
 $data = $posts->fetch()
