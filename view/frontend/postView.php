@@ -45,12 +45,13 @@
                 ?>
             <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                 <div>
-                    <label for="author">Auteur</label><br />
-                    <input type="text" id="author" name="author" />
+                    
+                    <label hidden for="author">Auteur</label><br />
+                    <input hidden type="text" id="author" name="author" value="<?= $_SESSION['pseudo'] ?>" />
                 </div>
                 <div>
                     <label for="comment">Commentaire</label><br />
-                    <textarea id="comment" name="comment"></textarea>
+                    <textarea rows="10" cols="45" id="comment" name="comment"></textarea>
                 </div>
                 <div>
                     <input type="submit" />
