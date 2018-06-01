@@ -4,7 +4,7 @@ require('controller/backend.php');
 
 try {
 
-        adminIndex();
+        adminConnection();
   
 }
 catch(Exception $e) {
