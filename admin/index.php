@@ -4,6 +4,8 @@ require('controller/backend.php');
 
 try {
 
+        adminIndex();
+  
 }
 catch(Exception $e) {
     $errorMessage = $e->getMessage();
