@@ -6,7 +6,7 @@
 	<meta name="description" content="Blog de Jean Forteroche. L'auteur vous livre ici son dernier roman sous forme de blog où il publie semaine apres semaine ses derniers chapitres">
 	<meta name="author"      content="Jean forteroche (www.blog-ecrivain.nicolasduquesne.com)">
 	
-	<title>Jean Forteroche - BILLET SIMPLE POUR L'ALASKA</title>
+	<title><?= $title ?></title>
 
 	<!-- <link rel="shortcut icon" href="assets/images/gt_favicon.png"> -->
 	
@@ -44,10 +44,12 @@
 	<!-- container -->
 	<div class="container">
 
-
+		<?= $content ?>
 
 	</div>	<!-- /container -->
+	<footer id="footer" class="top-space">
 		
+	</footer>		
 
 
 
