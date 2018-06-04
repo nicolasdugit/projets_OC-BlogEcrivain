@@ -10,21 +10,17 @@ $excerpt = substr($data['content'], 0, 1500);
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h3>
-    
-                    <?= htmlspecialchars($data['title']) ?>
-                </h3>
-                <h5><em>Publié le le <?= $data['creation_date_fr'] ?></em> </h5>
-                
+                <h3> <?= htmlspecialchars($data['title']) ?> </h3>
+                <h5> <em>Publié le le <?= $data['creation_date_fr'] ?></em> </h5>
                 <p>
-                    <?= nl2br(htmlspecialchars($excerpt)) , ' [...] lire la suite ' ?>
-                    <br />
+                    <?= nl2br(htmlspecialchars($excerpt)) , ' [...] ' ?>
+                    <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></h6>
+                    <br>
                 </p>
             </div>
         </div>
     </div>
 <?php
-
 $posts->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
