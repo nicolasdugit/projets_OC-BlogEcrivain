@@ -42,17 +42,26 @@
 
                     <?php 
                     if (isset($_SESSION['pseudo'])) {
+                        if ($comment['comment_report'] == false && $comment['comment_verify'] == false) 
+                        { 
                         ?>
                             <a href="index.php?action=reportComment&amp;comId=<?= $comment['id'] ?>">signaler ce commentaire !</a></p>
                         <?php
+                        }
+                        elseif ($comment['comment_verify'] == true)
+                        {
+                        ?>
+                        <p>Commentaire vérifié</p>
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                        <p>Commentaire signalé</p>
+                        <?php
+                        }
                     }
                     ?>
-
-
-
-
-
-
                 <?php
                 }
 
