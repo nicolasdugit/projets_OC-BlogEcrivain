@@ -55,6 +55,15 @@ try {
                 throw new Exception('Aucun identifiant de commentaire envoyé');
             }
         }
+        elseif ($_GET['action'] == 'reportComment') {
+            if (isset($_GET['comId']) && $_GET['comId'] > 0) {
+                reportComment(htmlspecialchars($_GET['comId']));
+            }
+            else {
+                throw new Exception('Impossible de signaler le commentaire');
+            }
+        }
+
         elseif ($_GET['action'] == 'connectionPage') {
             connectionPage();
         }

@@ -9,7 +9,7 @@ class CommentManager extends Manager
     public function getComments($postId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
+        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, comment_verify, comment_report FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
         $comments->execute(array($postId));
 
         return $comments;
@@ -27,7 +27,7 @@ class CommentManager extends Manager
     public function getComment($commentId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE id = ?');
+        $req = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, comment_verify, comment_report FROM comments WHERE id = ?');
         $req->execute(array($commentId));
         $comment = $req->fetch();
 
@@ -54,5 +54,14 @@ class CommentManager extends Manager
         $nbComments = $req->execute(array($postId));
 
         return $nbcomments;
+    }
+
+    public function reportComment($commentId)
+    {
+        $db = $this->dbConnect();
+        $reportCom = $db->prepare('UPDATE comments SET comment_report = true WHERE id = ?');
+        $affectedLines = $reportCom->execute(array($commentId));
+
+        return $affectedLines;
     }
 }

@@ -30,7 +30,7 @@
                     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
 
                     <?php 
-                    if (isset($_SESSION['pseudo'])) {
+                    if (isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == $comment['author']) {
                         ?>
                             (<a href="index.php?action=selectComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">modifier</a>)</p>
                         <?php
@@ -38,6 +38,30 @@
                     ?>
 
                     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+
+
+                    <?php 
+                    if (isset($_SESSION['pseudo'])) {
+                        if ($comment['comment_report'] == false && $comment['comment_verify'] == false) 
+                        { 
+                        ?>
+                            <a href="index.php?action=reportComment&amp;comId=<?= $comment['id'] ?>">signaler ce commentaire !</a></p>
+                        <?php
+                        }
+                        elseif ($comment['comment_verify'] == true)
+                        {
+                        ?>
+                        <p>Commentaire vérifié</p>
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                        <p>Commentaire signalé</p>
+                        <?php
+                        }
+                    }
+                    ?>
                 <?php
                 }
 
