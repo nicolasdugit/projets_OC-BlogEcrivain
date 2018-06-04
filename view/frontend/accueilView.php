@@ -4,8 +4,8 @@
 <h2 class="text-center top-space">Mon dernier chapitre</h2>
 
 <?php
-$data = $posts->fetch()
-
+$data = $posts->fetch();
+$excerpt = substr($data['content'], 0, 1500);
 ?>
     <div class="container">
         <div class="row">
@@ -14,12 +14,12 @@ $data = $posts->fetch()
     
                     <?= htmlspecialchars($data['title']) ?>
                 </h3>
+                <h5><em>Publié le le <?= $data['creation_date_fr'] ?></em> </h5>
                 
                 <p>
-                    <?= nl2br(htmlspecialchars($data['content'])) ?>
+                    <?= nl2br(htmlspecialchars($excerpt)) , ' [...] lire la suite ' ?>
                     <br />
                 </p>
-                <h5><em>Publié le le <?= $data['creation_date_fr'] ?></em> </h5>
             </div>
         </div>
     </div>
