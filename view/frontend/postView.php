@@ -51,10 +51,11 @@
                 </div>
                 <div>
                     <label for="comment">Commentaire</label><br />
-                    <textarea rows="10" cols="45" id="comment" name="comment"></textarea>
+                    <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
+                    <br>
                 </div>
                 <div>
-                    <input type="submit" />
+                    <button class="btn btn-danger" type="submit">Commenter</button>
                 </div>
             </form>
                 <?php

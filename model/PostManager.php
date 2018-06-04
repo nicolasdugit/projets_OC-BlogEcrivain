@@ -31,4 +31,5 @@ class PostManager extends Manager
 
         return $req;
     }
+
 }

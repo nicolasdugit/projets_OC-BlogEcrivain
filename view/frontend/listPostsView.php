@@ -15,6 +15,7 @@
             <?php
             if ($lastPost = $posts->fetch())
             {
+            $excerpt = substr($lastPost['content'], 0, 1500);
             ?>
             <article class="col-md-8 maincontent">
                 <header class="page-header">
@@ -22,10 +23,10 @@
                                  <h5><em>Publié le le <?= $lastPost['creation_date_fr'] ?></em> </h5>
                 </header>
                                 <p>
-                                    <?= nl2br(htmlspecialchars($lastPost['content'])) ?>
+                                    <?= nl2br(htmlspecialchars($excerpt)), ' [...]' ?>
                                     <br />
                                 </p>
-                                <h6><a href="index.php?action=post&amp;id=<?= $lastPost['id'] ?>">Commentaires</a></h6>
+                                <h6><a href="index.php?action=post&amp;id=<?= $lastPost['id'] ?>">Lire la suite</a></h6>
             </article>
             <?php
             }
@@ -38,6 +39,7 @@
                 <?php
                 while ($data = $posts->fetch())
                 {
+                $excerpt = substr($data['content'], 0, 500);
                 ?>
                         <div class="row widget">
                             <div class="col-xs-12">
@@ -47,10 +49,10 @@
                                  <h5><em>Publié le le <?= $data['creation_date_fr'] ?></em> </h5>
                                 
                                 <p>
-                                    <?= nl2br(htmlspecialchars($data['content'])) ?>
+                                    <?= nl2br(htmlspecialchars($excerpt)) , ' [...]' ?>
                                     <br />
                                 </p>
-                                <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></h6>
+                                <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></h6>
                             </div>
                         </div>
                 <?php
