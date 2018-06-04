@@ -30,7 +30,7 @@
                     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
 
                     <?php 
-                    if (isset($_SESSION['pseudo'])) {
+                    if (isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == $comment['author']) {
                         ?>
                             (<a href="index.php?action=selectComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">modifier</a>)</p>
                         <?php
