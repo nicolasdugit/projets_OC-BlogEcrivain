@@ -38,6 +38,21 @@
                     ?>
 
                     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+
+
+                    <?php 
+                    if (isset($_SESSION['pseudo'])) {
+                        ?>
+                            <a href="index.php?action=reportComment&amp;comId=<?= $comment['id'] ?>">signaler ce commentaire !</a></p>
+                        <?php
+                    }
+                    ?>
+
+
+
+
+
+
                 <?php
                 }
 

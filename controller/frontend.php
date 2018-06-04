@@ -88,6 +88,23 @@ function updateComment($commentId, $author, $comment, $postId)
     }
 }
 
+//Signalement d'un commentaire
+function reportComment($commentId)
+{
+    $commentManager = new CommentManager();
+
+    $updatedLines = $commentManager->reportComment($commentId);
+
+    if ($updatedLines === false) 
+    {
+        throw new Exception('Impossible de signaler  commentaire !');
+    }
+    else 
+    {
+        header('Location: index.php');
+    }
+}
+
 //connexion utilisateur
 function connectionPage()
 {
