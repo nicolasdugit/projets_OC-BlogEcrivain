@@ -8,9 +8,13 @@
             <div class="col-sm-12">
             <p>test</p>
 	
-			<h1>TinyMCE Quick Start Guide</h1>
-			<form method="post">
-				<textarea id="mytextarea">Hello, World!</textarea>
+			<form action="index.php?action=publishPost" method="post">
+				<label for="title">Titre du chapitre</label><br>
+				<input type="text" name="title"><br>
+				<textarea id="mytextarea" name="content">Hello, World!</textarea>
+				<div>
+                    <button class="btn btn-danger" type="submit">Poster</button>
+                </div>
 			</form>
 
 <h2 class="text-center top-space"><a href="../index.php">Retour a l'accueil</a></h2>

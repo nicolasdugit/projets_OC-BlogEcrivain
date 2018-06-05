@@ -9,6 +9,16 @@ try {
             if ($_GET['action'] == 'createPost') {
                 createPost();
             }
+            elseif ($_GET['action'] == 'publishPost') {
+                
+                if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                    newPost(htmlspecialchars($_POST['title']), htmlspecialchars($_POST['content']));
+                }
+                else {
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+                
+            }
         }
         
         else {
