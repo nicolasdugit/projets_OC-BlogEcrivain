@@ -21,7 +21,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3 class="thin text-center">Connectez vous à votre compte</h3>
-                            <p class="text-center text-muted">Vous n'etes pas administrateur ? <a href="index.php">retournez sur la page d'acceuil par ici.</a> pour pouvoir lire mon livre</p>
+                            <p class="text-center text-muted">Vous n'etes pas administrateur ? <a href="../index.php">retournez sur la page d'acceuil par ici.</a> pour pouvoir lire mon livre</p>
                             <hr>
                             
                             <form action="index.php?action=connection" method="post">
