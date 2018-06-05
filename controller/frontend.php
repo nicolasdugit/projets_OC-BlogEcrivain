@@ -143,7 +143,7 @@ function deconnection ()
 {
     $_SESSION = array();
     session_destroy();
-     header('Location: index.php');
+    header('Location: index.php');
 }
 
 function inscriptionPage()
@@ -157,16 +157,26 @@ function inscription($pseudo, $pass, $mail)
 
     $pass_hash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-    $affectedLines = $membersManager->inscription($pseudo, $pass_hash, $mail);
+    $verifMembers = $membersManager->members($pseudo);
 
-    if ($affectedLines === false) 
-    {
-        echo "string";
-        echo $affectedLines;
-        throw new Exception('Impossible d\'ajouter votre compte !');
+    if (!empty($verifMembers) === false) {
+
+        $affectedLines = $membersManager->inscription($pseudo, $pass_hash, $mail);
+
+        if ($affectedLines === false) 
+        {
+            throw new Exception('Impossible d\'ajouter votre compte !');
+        }
+        else 
+        {
+            session_start();
+            // $_SESSION['id'] = $_POST['id'];
+            $_SESSION['pseudo'] = $_POST['pseudo'];
+            header('Location: index.php');
+        }
     }
     else 
     {
-        header('Location: index.php');
+        throw new Exception('Cet utilisateur existe déjà ');
     }
 }
