@@ -3,7 +3,6 @@
 <?php ob_start(); ?>
 <h2 class="text-center top-space">Administration</h2>
 
-
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -11,6 +10,7 @@
             </div>
         </div>
     </div>
+
 
 <?php $content = ob_get_clean(); ?>
 

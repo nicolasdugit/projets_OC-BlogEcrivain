@@ -1,11 +1,10 @@
 <?php 
 
-function adminIndex()
-{
-    require('view/backend/adminView.php');
-}
+use \JeanForteroche\Blog\Backend\Model\PostManager;
+use \JeanForteroche\Blog\Backend\Model\MembersManager;
 
-function adminConnection()
-{
-    require('view/backend/adminConnectionView.php');
-}
+require_once('model/PostManager.php');
+require_once('model/MembersManager.php');
+
+
+

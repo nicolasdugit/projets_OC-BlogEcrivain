@@ -9,7 +9,15 @@
 						<!-- <a href="about.php">À propos de l'auteur</a> | -->
 						<a href="index.php?action=listPosts">BLOG</a> |
 						<b><a href="index.php?action=inscriptionPage">Inscription</a></b> |
-						<a href="admin/index.php">Admin</a> |
+						<?php
+						if (isset($_SESSION['group_id']) && $_SESSION['group_id'] == 1) {
+							
+							?>
+								<a href="admin/index.php">Admin</a> |
+							<?php
+							
+						}
+						?>
 					</p>
 				</div>
 			</div>

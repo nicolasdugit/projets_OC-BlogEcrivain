@@ -130,6 +130,7 @@ function connection($pseudo, $pass)
         if ($isPassCorrect) {
             session_start();
             $_SESSION['id'] = $passTest['id'];
+            $_SESSION['group_id'] = $passTest['group_id'];
             $_SESSION['pseudo'] = $_POST['pseudo'];
             header('Location: index.php');
         }
@@ -170,7 +171,7 @@ function inscription($pseudo, $pass, $mail)
         else 
         {
             session_start();
-            // $_SESSION['id'] = $_POST['id'];
+            $_SESSION['id'] = $verifMembers['id'];
             $_SESSION['pseudo'] = $_POST['pseudo'];
             header('Location: index.php');
         }

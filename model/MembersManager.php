@@ -9,7 +9,7 @@ class MembersManager extends Manager
 	public function connection($pseudo, $pass)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, pass FROM members WHERE pseudo = ?');
+        $req = $db->prepare('SELECT id, pass, group_id FROM members WHERE pseudo = ?');
         $req->execute(array($pseudo));
         $test = $req->fetch();
 

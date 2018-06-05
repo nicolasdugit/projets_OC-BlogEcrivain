@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenClassrooms\Blog\Model;
+namespace JeanForteroche\Blog\Backend\Model;
 
 class Manager
 {
