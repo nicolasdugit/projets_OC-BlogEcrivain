@@ -10,7 +10,7 @@
             </div>
         </div>
     </div>
-
+<h2 class="text-center top-space"><a href="../index.php">Retour a l'accueil</a></h2>
 
 <?php $content = ob_get_clean(); ?>
 

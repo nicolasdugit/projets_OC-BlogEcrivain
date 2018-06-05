@@ -12,7 +12,7 @@
         <div class="row">
 			<h1>Erreur</h1>
 			<h2><?= $errorMessage ?> </h2>
-			<p><a href="../index.php">Retour à la liste des billets</a></p>
+			<p><a href="../index.php">Retour vers la page d'accueil</a></p>
          </div> 
 </div>
 <?php $content = ob_get_clean(); ?>

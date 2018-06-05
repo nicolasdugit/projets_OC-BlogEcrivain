@@ -1,10 +1,15 @@
 <?php 
 
-use \JeanForteroche\Blog\Backend\Model\PostManager;
-use \JeanForteroche\Blog\Backend\Model\MembersManager;
+// use \JeanForteroche\Blog\Backend\Model\PostManager;
+// use \JeanForteroche\Blog\Backend\Model\MembersManager;
 
-require_once('model/PostManager.php');
-require_once('model/MembersManager.php');
+// require_once('model/PostManager.php');
+// require_once('model/MembersManager.php');
 
 
 
+function adminHome()
+{
+
+    require('view/backend/adminView.php');
+}
