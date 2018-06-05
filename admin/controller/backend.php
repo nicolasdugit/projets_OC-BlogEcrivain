@@ -7,9 +7,12 @@
 // require_once('model/MembersManager.php');
 
 
-
 function adminHome()
 {
-
     require('view/backend/adminView.php');
+}
+
+function createPost()
+{
+	require('view/backend/createPostView.php');
 }

@@ -1,12 +1,12 @@
 <?php $title = 'Jean Forteroche - PAGE ADMINISTRATEUR'; ?>
 
 <?php ob_start(); ?>
-<h2 class="text-center top-space">Administration</h2>
+<h2 class="text-center top-space">Creation nouvel article</h2>
 
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            <a href="index.php?action=createPost">Nouvel article</a>
+            <p>test</p>
             </div>
         </div>
     </div>
