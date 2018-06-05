@@ -9,7 +9,7 @@
 						<!-- <a href="about.php">À propos de l'auteur</a> | -->
 						<a href="index.php?action=listPosts">BLOG</a> |
 						<b><a href="index.php?action=inscriptionPage">Inscription</a></b> |
-						<!-- <a href="admin/admin.php">Admin</a> | -->
+						<a href="admin/index.php">Admin</a> |
 					</p>
 				</div>
 			</div>
