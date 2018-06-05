@@ -7,9 +7,12 @@
         <div class="row">
             <div class="col-sm-12">
             <p>test</p>
-            </div>
-        </div>
-    </div>
+	
+			<h1>TinyMCE Quick Start Guide</h1>
+			<form method="post">
+				<textarea id="mytextarea">Hello, World!</textarea>
+			</form>
+
 <h2 class="text-center top-space"><a href="../index.php">Retour a l'accueil</a></h2>
 
 <?php $content = ob_get_clean(); ?>

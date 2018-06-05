@@ -8,6 +8,15 @@
 	
 	<title><?= $title ?></title>
 
+	<!-- TINYMCE -->
+	<script src="vendor/node_modules/tinymce/tinymce.min.js"></script>
+	<script type="text/javascript">
+		tinymce.init({
+    		selector: '#mytextarea'
+  		});
+  	</script>
+
+
 	<!-- <link rel="shortcut icon" href="public/images/gt_favicon.png"> -->
 	
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -33,6 +42,10 @@
 		<br> <br>
 		<h2 class="thin">Page administration</h2>
 		
+
+            </div>
+        </div>
+    </div>
 		
 
 	</div>
