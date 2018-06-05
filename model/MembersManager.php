@@ -27,4 +27,14 @@ class MembersManager extends Manager
 
         return $affectedLines;
     }
+    public function members($pseudo)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT * FROM members WHERE pseudo = ?');
+        $req->execute(array($pseudo));
+        $affectedLines = $req->fetch();
+        
+        return $affectedLines;
+    }
+
 }

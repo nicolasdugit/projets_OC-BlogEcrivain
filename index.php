@@ -88,18 +88,20 @@ try {
         }
         elseif ($_GET['action'] == 'inscription') {
             if ($_POST['pseudo'] && $_POST['pass'] && $_POST['mail']) {
-
-                if (($_POST['pass'] != $_POST['pass-confirm'])) {
-                    throw new Exception('Les mot des passes doivent etre identiques');
-                }
-                else {
-                    $_POST['mail'] = htmlspecialchars($_POST['mail']);
-                    if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail'])) {
-                        throw new Exception('Adresse mail non valide');
-                    } else {
-                        inscription(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']), htmlspecialchars($_POST['mail']));
+                
+                    if (($_POST['pass'] != $_POST['pass-confirm'])) {
+                        throw new Exception('Les mot des passes doivent etre identiques');
                     }
-                }
+                    else {
+                        $_POST['mail'] = htmlspecialchars($_POST['mail']);
+                        if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail'])) {
+                            throw new Exception('Adresse mail non valide');
+                        } else {
+                            verifMembers($_POST['pseudo']);
+                            // inscription(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']), htmlspecialchars($_POST['mail']));
+                        }
+                    }
+              
             }
             else {
                 throw new Exception('Veuillez remplir tous les champs');

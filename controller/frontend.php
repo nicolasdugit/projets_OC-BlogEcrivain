@@ -143,7 +143,7 @@ function deconnection ()
 {
     $_SESSION = array();
     session_destroy();
-     header('Location: index.php');
+    header('Location: index.php');
 }
 
 function inscriptionPage()
@@ -159,6 +159,7 @@ function inscription($pseudo, $pass, $mail)
 
     $affectedLines = $membersManager->inscription($pseudo, $pass_hash, $mail);
 
+
     if ($affectedLines === false) 
     {
         echo "string";
@@ -168,5 +169,20 @@ function inscription($pseudo, $pass, $mail)
     else 
     {
         header('Location: index.php');
+    }
+}
+
+function verifMembers($pseudo)
+{
+    $membersManager = new MembersManager();
+    $verifMembers = $membersManager->members($pseudo);
+    
+    if (!empty($verifMembers)) {
+        echo "existe";
+    }
+    else
+    {
+    echo "existe pas";
+        
     }
 }
