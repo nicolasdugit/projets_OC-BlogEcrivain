@@ -72,7 +72,7 @@ try {
                 connection(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']));
             }
             else {
-                throw new Exception('Aucun identifiant de commentaire envoyé');
+                throw new Exception('Probleme identification');
             }
         }
         elseif ($_GET['action'] == 'deconnection') {
@@ -97,11 +97,9 @@ try {
                         if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail'])) {
                             throw new Exception('Adresse mail non valide');
                         } else {
-                            verifMembers($_POST['pseudo']);
-                            // inscription(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']), htmlspecialchars($_POST['mail']));
+                            inscription(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']), htmlspecialchars($_POST['mail']));
                         }
                     }
-              
             }
             else {
                 throw new Exception('Veuillez remplir tous les champs');

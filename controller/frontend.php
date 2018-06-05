@@ -157,32 +157,23 @@ function inscription($pseudo, $pass, $mail)
 
     $pass_hash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-    $affectedLines = $membersManager->inscription($pseudo, $pass_hash, $mail);
+    $verifMembers = $membersManager->members($pseudo);
+    
+    if (!empty($verifMembers) === false) {
 
+        $affectedLines = $membersManager->inscription($pseudo, $pass_hash, $mail);
 
-    if ($affectedLines === false) 
-    {
-        echo "string";
-        echo $affectedLines;
-        throw new Exception('Impossible d\'ajouter votre compte !');
+        if ($affectedLines === false) 
+        {
+            throw new Exception('Impossible d\'ajouter votre compte !');
+        }
+        else 
+        {
+            header('Location: index.php');
+        }
     }
     else 
     {
-        header('Location: index.php');
-    }
-}
-
-function verifMembers($pseudo)
-{
-    $membersManager = new MembersManager();
-    $verifMembers = $membersManager->members($pseudo);
-    
-    if (!empty($verifMembers)) {
-        echo "existe";
-    }
-    else
-    {
-    echo "existe pas";
-        
+        throw new Exception('Cet utilisateur existe déjà ');
     }
 }
