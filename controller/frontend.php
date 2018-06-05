@@ -158,7 +158,7 @@ function inscription($pseudo, $pass, $mail)
     $pass_hash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
     $verifMembers = $membersManager->members($pseudo);
-    
+
     if (!empty($verifMembers) === false) {
 
         $affectedLines = $membersManager->inscription($pseudo, $pass_hash, $mail);
@@ -169,6 +169,9 @@ function inscription($pseudo, $pass, $mail)
         }
         else 
         {
+            session_start();
+            // $_SESSION['id'] = $_POST['id'];
+            $_SESSION['pseudo'] = $_POST['pseudo'];
             header('Location: index.php');
         }
     }
