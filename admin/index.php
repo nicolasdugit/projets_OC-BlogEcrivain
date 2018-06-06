@@ -20,7 +20,7 @@ try {
                 
             }
             elseif ($_GET['action'] == 'listPost') {
-                listPost();
+                listPosts();
             }
         }
         
