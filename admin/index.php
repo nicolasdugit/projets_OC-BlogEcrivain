@@ -63,6 +63,15 @@ try {
                     throw new Exception('Article non trouvé. Impossible de le supprimer');
                 }
             }
+            elseif ($_GET['action'] == 'validateComment') {
+                if (isset($_GET['com_id']) && $_GET['com_id'] > 0) {
+                    validateComment($_GET['com_id']);
+                }
+                else 
+                {
+                    throw new Exception('Article non trouvé. Impossible de le valider');
+                }
+            }
         }
         
         else {
