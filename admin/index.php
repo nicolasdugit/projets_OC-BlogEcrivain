@@ -23,7 +23,13 @@ try {
                 listPosts();
             }
             elseif ($_GET['action'] == 'modifPost') {
-                modifPost();
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    modifPost();
+                }
+                else
+                {
+                    throw new Exception('Article non trouvé');
+                }
             }
         }
         

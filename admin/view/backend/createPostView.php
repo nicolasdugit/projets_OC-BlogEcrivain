@@ -20,6 +20,9 @@
 
 <h2 class="text-center top-space"><a href="../index.php">Retour a l'accueil</a></h2>
 <h2 class="text-center top-space"><a href="index.php">Retour page admin</a></h2>
+</div>
+</div>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 
