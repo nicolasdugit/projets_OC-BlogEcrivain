@@ -8,8 +8,9 @@
         <div class="row">
             <div class="col-sm-4">
             	<h3>Actions</h3>
-            	<h4><a href="index.php?action=createPost">Nouvel article</a></h4>
-            	<h4><a href="index.php?action=createPost">Nouvel article</a></h4>
+				<h4><a href="index.php?action=createPost">Nouvel article</a></h4>
+				<h4><a href="index.php?action=listPost">Modifier/Supprimer un article</a></h4>
+				<h4><a href="../index.php">Retour a l'accueil</a></h4>
             </div>
             <div class="col-sm-4">
             	<h3>Commentaires signalés</h3>
@@ -19,7 +20,6 @@
             </div>
         </div>
     </div>
-<h2 class="text-center top-space"><a href="../index.php">Retour a l'accueil</a></h2>
 
 <?php $content = ob_get_clean(); ?>
 
