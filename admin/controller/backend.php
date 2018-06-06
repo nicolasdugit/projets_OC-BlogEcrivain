@@ -25,7 +25,7 @@ function newPost($title, $content)
 
     if ($affectedLines === false) 
     {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
+        throw new Exception('Impossible d\'ajouter le nouvel article !');
     }
     else 
     {
@@ -52,8 +52,15 @@ function modifPost($post_id)
 function updatePost($newTitle, $newContent)
 {
     $postManager = new Postmanager();
-    
-    $updatedPost = $postManager->updatePost($newTitle, $newContent);
 
-    header('Location: index.php?action=listPost');
+    $affectedLines = $postManager->updatePost($newTitle, $newContent);
+
+    if ($affectedLines === false) 
+    {
+        throw new Exception('Impossible de modifier l\'article !');       
+    }
+    else
+    {
+        header('Location: index.php?action=listPost');
+    }
 }
