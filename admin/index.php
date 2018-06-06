@@ -54,6 +54,15 @@ try {
                     throw new Exception('Article non trouvé. Impossible de le supprimer');
                 }
             }
+            elseif ($_GET['action'] == 'deleteComment') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    deleteComment($_GET['id']);
+                }
+                else 
+                {
+                    throw new Exception('Article non trouvé. Impossible de le supprimer');
+                }
+            }
         }
         
         else {
