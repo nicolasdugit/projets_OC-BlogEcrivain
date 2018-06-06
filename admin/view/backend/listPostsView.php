@@ -11,13 +11,13 @@
         </ol>
 
         <div class="row">
-            <!-- Article main content -->
+
             <?php
-            if ($lastPost = $posts->fetch())
+            while ($lastPost = $posts->fetch())
             {
             $excerpt = substr($lastPost['content'], 0, 1500);
             ?>
-            <article class="col-md-12 maincontent">
+            <div class="col-md-12 maincontent">
                 <header class="page-header">
                     <h1 class="page-title"><?= htmlspecialchars($lastPost['title']) ?></h1>
                                  <h5><em>Publié le le <?= $lastPost['creation_date_fr'] ?></em> </h5>
@@ -27,7 +27,7 @@
                                     <br />
                                 </p>
                                 <h6><a href="index.php?action=post&amp;id=<?= $lastPost['id'] ?>">Lire la suite</a></h6>
-            </article>
+            </div>
             <?php
             }
             ?>
