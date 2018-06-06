@@ -15,7 +15,7 @@
             <div class="col-sm-4">
             	<h3>Commentaires signalés</h3>
                 <?php 
-                while ($data = $comments->fetch()) {
+                while ($data = $reportedComments->fetch()) {
                     if ($data['comment_report'] != null) 
                     {
                         ?>
@@ -26,10 +26,25 @@
                         <?php
                     }
                 }
+                $reportedComments->closecursor();
                 ?>
             </div>
             <div class="col-sm-4">
                 <h3>Commentaires à modérer</h3>
+                <?php 
+                while ($data = $toValidateComments->fetch()) {
+                    if ($data['comment_verify'] === null) 
+                    {
+                        ?>
+                        <h3><?= $data['author']  ?></h3>
+                        <p><?= $data['comment'] ?></p>
+                        <button class="btn btn-success">Valider</button>
+                        <button class="btn btn-warning">Supprimer</button>
+                        <?php
+                    }
+                }
+                $toValidateComments->closecursor();
+                ?>
             </div>
         </div>
     </div>

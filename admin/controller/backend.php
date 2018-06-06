@@ -10,7 +10,8 @@ require_once('model/CommentManager.php');
 function adminHome()
 {
     $CommentManager = new CommentManager();
-    $comments = $CommentManager->getAllComments();
+    $reportedComments = $CommentManager->getAllComments();
+    $toValidateComments = $CommentManager->getAllComments();
 
     require('view/backend/adminView.php');
 }
