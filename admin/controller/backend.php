@@ -52,7 +52,8 @@ function modifPost($post_id)
 function updatePost($newTitle, $newContent)
 {
     $postManager = new Postmanager();
+    
     $updatedPost = $postManager->updatePost($newTitle, $newContent);
 
-    
+    header('Location: index.php?action=listPost');
 }
