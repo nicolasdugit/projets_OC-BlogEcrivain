@@ -43,5 +43,5 @@ function listPosts()
 
 function modifPost()
 {
-	require('view/backend/modifPostsView.php');
+	require('view/backend/modifPostView.php');
 }
