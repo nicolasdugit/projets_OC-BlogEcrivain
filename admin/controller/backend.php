@@ -74,9 +74,26 @@ function deletePost($id)
     $postManager = new Postmanager();
 
     $affectedLines = $postManager->deletePost($id);
-        if ($affectedLines === false) 
+
+    if ($affectedLines === false) 
     {
         throw new Exception('Impossible de supprimer l\'article !');       
+    }
+    else
+    {
+        header('Location: index.php?action=listPost');
+    }
+}
+
+function deleteComment($com_id)
+{
+    $commentManager = new CommentManager();
+
+    $affectedLines = $postManager->deletePost($com_id);
+    
+    if ($affectedLines === false) 
+    {
+        throw new Exception('Impossible de supprimer le commentaire !');       
     }
     else
     {

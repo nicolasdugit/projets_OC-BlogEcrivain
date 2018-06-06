@@ -21,8 +21,8 @@
                         ?>
                         <h3><?= $data['author']  ?></h3>
                         <p><?= $data['comment'] ?></p>
-                        <a class="btn btn-success">Valider</a>
-                        <a class="btn btn-warning">Supprimer</a>
+                        <a href="index.php?" class="btn btn-success">Valider</a>
+                        <a href="index.php?deleteComment&amp;com_Id=<?= $comment['id'] ?>" class="btn btn-warning">Supprimer</a>
                         <?php
                     }
                 }
@@ -38,8 +38,8 @@
                         ?>
                         <h3><?= $data['author']  ?></h3>
                         <p><?= $data['comment'] ?></p>
-                        <a class="btn btn-success">Valider</a>
-                        <a class="btn btn-warning">Supprimer</a>
+                        <a href="index.php?" class="btn btn-success">Valider</a>
+                        <a href="index.php?deleteComment&amp;com_Id=<?= $comment['id'] ?>" class="btn btn-warning">Supprimer</a>
                         <?php
                     }
                 }
