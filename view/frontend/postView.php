@@ -13,7 +13,7 @@
 
             <article class="col-md-8 maincontent">
                 <header class="page-header">
-                    <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
+                    <h1 class="page-title"><?= ($post['title']) ?></h1>
                                  <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em> </h5>
                 </header>
                                 <p>
@@ -27,7 +27,7 @@
                 while ($comment = $comments->fetch()) 
                 {
                 ?>
-                    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
+                    <p><strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
 
                     <?php 
                     if (isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == $comment['author']) {
@@ -37,7 +37,7 @@
                     }
                     ?>
 
-                    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+                    <p><?= nl2br(($comment['comment'])) ?></p>
 
 
                     <?php 
