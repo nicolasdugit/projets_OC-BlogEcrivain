@@ -16,7 +16,7 @@
         	if ($data = $post) 
         	{
         	?>
-            	<form action="index.php?action=updatePost" method="post">
+            	<form action="index.php?action=updatePost&amp;id=<?= $_GET['id'] ?>" method="post">
 				<div class="form-group">
 					<label for="title">Titre du chapitre :</label><br>
 					<input class="form-control" type="text" name="newTitle" value="<?= $data['title'] ?>"><br>
