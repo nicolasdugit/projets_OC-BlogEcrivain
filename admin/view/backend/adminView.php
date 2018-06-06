@@ -14,9 +14,22 @@
             </div>
             <div class="col-sm-4">
             	<h3>Commentaires signalés</h3>
+                <?php 
+                while ($data = $comments->fetch()) {
+                    if ($data['comment_report'] != null) 
+                    {
+                        ?>
+                        <h3><?= $data['author']  ?></h3>
+                        <p><?= $data['comment'] ?></p>
+                        <button class="btn btn-success">Valider</button>
+                        <button class="btn btn-warning">Supprimer</button>
+                        <?php
+                    }
+                }
+                ?>
             </div>
             <div class="col-sm-4">
-            	<h3>Commentaires à modérer</h3>
+                <h3>Commentaires à modérer</h3>
             </div>
         </div>
     </div>

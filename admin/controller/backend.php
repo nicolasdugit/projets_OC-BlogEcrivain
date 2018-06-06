@@ -9,6 +9,9 @@ require_once('model/CommentManager.php');
 
 function adminHome()
 {
+    $CommentManager = new CommentManager();
+    $comments = $CommentManager->getAllComments();
+
     require('view/backend/adminView.php');
 }
 
