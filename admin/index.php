@@ -22,6 +22,9 @@ try {
             elseif ($_GET['action'] == 'listPost') {
                 listPosts();
             }
+            elseif ($_GET['action'] == 'modifPost') {
+                modifPost();
+            }
         }
         
         else {

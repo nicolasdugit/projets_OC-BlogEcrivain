@@ -25,7 +25,7 @@
                     <?= nl2br(htmlspecialchars($excerpt)), ' [...]' ?>
                     <br>
                 </p>
-                <a class="btn btn-warning" href="index.php?action=updatePost&amp;id=<?= $post['id'] ?>">Modifier</a>
+                <a class="btn btn-warning" href="index.php?action=modifPost&amp;id=<?= $post['id'] ?>">Modifier</a>
                 <a class="btn btn-danger" href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer</a>
             </div>
             <?php
