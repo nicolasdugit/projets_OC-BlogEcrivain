@@ -48,3 +48,11 @@ function modifPost($post_id)
 
 	require('view/backend/modifPostView.php');
 }
+
+function updatePost($newTitle, $newContent)
+{
+    $postManager = new Postmanager();
+    $updatedPost = $postManager->updatePost($newTitle, $newContent);
+
+    
+}
