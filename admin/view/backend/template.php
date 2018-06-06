@@ -12,7 +12,8 @@
 	<script src="vendor/node_modules/tinymce/tinymce.min.js"></script>
 	<script type="text/javascript">
 		tinymce.init({
-    		selector: '#mytextarea'
+    		selector: '#mytextarea',
+    		theme: 'modern',
   		});
   	</script>
 

@@ -22,7 +22,7 @@
                     <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em> </h5>
                 </div>
                 <p>
-                    <?= nl2br(htmlspecialchars($excerpt)), ' [...]' ?>
+                    <?= nl2br(($excerpt)), ' [...]' ?>
                     <br>
                 </p>
                 <a class="btn btn-warning" href="index.php?action=modifPost&amp;id=<?= $post['id'] ?>">Modifier</a>

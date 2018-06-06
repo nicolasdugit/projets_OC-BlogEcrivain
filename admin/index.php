@@ -34,7 +34,7 @@ try {
             elseif ($_GET['action'] == 'updatePost') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     if (!empty($_POST['newTitle']) && !empty($_POST['newContent'])) {
-                        updatePost(htmlspecialchars($_POST['newTitle']), htmlspecialchars($_POST['newContent']), $_GET['id']);
+                        updatePost(htmlspecialchars($_POST['newTitle']), ($_POST['newContent']), $_GET['id']);
                     }
                     else {
                         throw new Exception('Tous les champs ne sont pas remplis !');
