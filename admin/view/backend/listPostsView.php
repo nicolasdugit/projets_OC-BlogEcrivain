@@ -26,7 +26,7 @@
                                     <?= nl2br(htmlspecialchars($excerpt)), ' [...]' ?>
                                     <br />
                                 </p>
-                                <h6><a href="index.php?action=post&amp;id=<?= $lastPost['id'] ?>">Lire la suite</a></h6>
+                                <h6><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Lire la suite</a></h6>
             </div>
             <?php
             }
