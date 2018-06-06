@@ -41,7 +41,10 @@ function listPosts()
 	require('view/backend/listPostsView.php');
 }
 
-function modifPost()
+function modifPost($post_id)
 {
+    $postManager = new Postmanager();
+    $post = $postManager->getPost($post_id);
+
 	require('view/backend/modifPostView.php');
 }
