@@ -40,3 +40,8 @@ function listPosts()
 
 	require('view/backend/listPostsView.php');
 }
+
+function modifPost()
+{
+	require('view/backend/modifPostsView.php');
+}
