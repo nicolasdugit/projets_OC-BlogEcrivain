@@ -89,7 +89,7 @@ function deleteComment($com_id)
 {
     $commentManager = new CommentManager();
 
-    $affectedLines = $postManager->deletePost($com_id);
+    $affectedLines = $commentManager->deleteComment($com_id);
     
     if ($affectedLines === false) 
     {
@@ -97,6 +97,6 @@ function deleteComment($com_id)
     }
     else
     {
-        header('Location: index.php?action=listPost');
+        header('Location: index.php');
     }
 }
