@@ -32,3 +32,11 @@ function newPost($title, $content)
         header('Location: index.php');
     }
 }
+
+function listPosts()
+{
+	$postManager = new Postmanager();
+	$posts = $postManager->getAllPosts();
+	
+	require('view/backend/listPostsView.php');
+}
