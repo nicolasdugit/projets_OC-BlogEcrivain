@@ -64,3 +64,18 @@ function updatePost($newTitle, $newContent, $id)
         header('Location: index.php?action=listPost');
     }
 }
+
+function deletePost($id)
+{
+    $postManager = new Postmanager();
+
+    $affectedLines = $postManager->deletePost($id);
+        if ($affectedLines === false) 
+    {
+        throw new Exception('Impossible de supprimer l\'article !');       
+    }
+    else
+    {
+        header('Location: index.php?action=listPost');
+    }
+}
