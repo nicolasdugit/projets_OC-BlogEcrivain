@@ -12,16 +12,23 @@
         </ol>
 
         <div class="row">
-            	<form action="index.php?action=publishPost" method="post">
+        	<?php 
+        	if ($data = $post) 
+        	{
+        	?>
+            	<form action="index.php?action=updatePost" method="post">
 				<div class="form-group">
 					<label for="title">Titre du chapitre :</label><br>
-					<input class="form-control" type="text" name="title" value="<?= $_GET['id'] ?>"><br>
-					<textarea class="form-control" id="mytextarea" name="content">Hello, World!</textarea>
+					<input class="form-control" type="text" name="newTitle" value="<?= $data['title'] ?>"><br>
+					<textarea class="form-control" id="mytextarea" name="newContent"><?= $data['content'] ?></textarea>
 	            </div>
 				<div>
-					<button class="btn btn-success" type="submit">Poster</button>
+					<button class="btn btn-warning" type="submit">Modifier</button>
 				</div>
 			</form>
+			<?php
+            }
+            ?>
         </div>
     </div>  <!-- /container -->
 
