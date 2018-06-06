@@ -36,7 +36,7 @@ function newPost($title, $content)
 function listPosts()
 {
 	$postManager = new Postmanager();
-	$posts = $postManager->getAllPosts();
-	
+	$posts = $postManager->getPosts();
+
 	require('view/backend/listPostsView.php');
 }
