@@ -17,7 +17,7 @@
                                  <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em> </h5>
                 </header>
                                 <p>
-                                    <?= nl2br(htmlspecialchars($post['content'])) ?>
+                                    <?= nl2br(($post['content'])) ?>
                                     <br />
                                 </p>
             </article>
