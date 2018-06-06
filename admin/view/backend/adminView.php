@@ -16,7 +16,7 @@
             	<h3>Commentaires signalés</h3>
                 <?php 
                 while ($data = $reportedComments->fetch()) {
-                    if ($data['comment_report'] != null) 
+                    if ($data['comment_report'] == 1) 
                     {
                         ?>
                         <h3><?= $data['author']  ?></h3>
@@ -33,7 +33,7 @@
                 <h3>Commentaires à modérer</h3>
                 <?php 
                 while ($data = $toValidateComments->fetch()) {
-                    if ($data['comment_verify'] === null) 
+                    if ($data['comment_verify'] == 0) 
                     {
                         ?>
                         <h3><?= $data['author']  ?></h3>

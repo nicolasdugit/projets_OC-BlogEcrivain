@@ -100,3 +100,19 @@ function deleteComment($com_id)
         header('Location: index.php');
     }
 }
+
+function validateComment($com_id)
+{
+    $commentManager = new CommentManager();
+
+    $affectedLines = $commentManager->validateComment($com_id);
+    
+    if ($affectedLines === false) 
+    {
+        throw new Exception('Impossible de valider le commentaire !');       
+    }
+    else
+    {
+        header('Location: index.php');
+    }
+}

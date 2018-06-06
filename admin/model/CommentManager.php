@@ -37,7 +37,7 @@ class CommentManager extends Manager
     public function validateComment($com_id)
     {
     	$db = $this->dbConnect();
-        $req = $db->prepare('UPDATE comments SET comment_report = false, comment_verify = true WHERE id = :com_id');
+        $req = $db->prepare('UPDATE comments SET comment_report = 0, comment_verify = 1 WHERE id = :com_id');
         $affectedLines  = $req->execute(array(
             ':com_id' => $com_id
         ));
