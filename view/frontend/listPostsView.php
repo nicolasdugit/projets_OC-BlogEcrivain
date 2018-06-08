@@ -18,7 +18,7 @@
                 <header class="page-header">
                     <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
                 </header>
-                    <p><?= nl2br(($excerpt)), ' [...]' ?></p>
+                    <p><?= $excerpt, ' [...]' ?></p>
                     <h6><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Lire la suite</a></h6>
                 <blockquote>
                     <p>Jean Forteroche</p>
