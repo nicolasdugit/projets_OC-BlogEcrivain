@@ -1,7 +1,6 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<!-- container -->
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="index.php">Accueil</a></li>
@@ -11,9 +10,12 @@
             <article class="col-md-8 maincontent">
                 <header class="page-header">
                     <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
-                    <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em></h5>
                 </header>
                 <p><?= $post['content'] ?></p>
+                <blockquote>
+                    <p>Jean Forteroche</p>
+                    <p class="small"> Publié le <?= $post['creation_date_fr'] ?> </p>
+                </blockquote>
             </article>
 
             <aside class="col-md-4 sidebar sidebar-right">

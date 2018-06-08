@@ -14,8 +14,8 @@ $excerpt = substr($data['content'], 0, 1500);
                 <p><?= $excerpt , ' [...] ' ?></p>
                 <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></h6>
                 <blockquote>
-                    <p>Par Jean Forteroche</p>
-                    <p class="small"> Publié le le <?= $data['creation_date_fr'] ?> </p>
+                    <p>Jean Forteroche</p>
+                    <p class="small"> Publié le<?= $data['creation_date_fr'] ?> </p>
                 </blockquote>
             </div>
         </div>
