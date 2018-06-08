@@ -62,7 +62,7 @@
                         </div>
                         <div>
                             <label for="comment">Commentaire</label><br />
-                            <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
+                            <textarea class="form-control" rows="10" id="comment" name="comment" maxlength="400"></textarea>
                             <br>
                         </div>
                         <div>
