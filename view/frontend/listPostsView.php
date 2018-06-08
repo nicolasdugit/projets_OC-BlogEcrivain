@@ -16,7 +16,7 @@
             ?>
             <article class="col-md-12 maincontent">
                 <header class="page-header">
-                    <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
+                    <h1 class="page-title"><a href="index.php?action=post&amp;id=<?= $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a></h1>
                 </header>
                     <p><?= $excerpt, ' [...]' ?></p>
                     <h6><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Lire la suite</a></h6>
