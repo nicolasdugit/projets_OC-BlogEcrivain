@@ -14,7 +14,18 @@
 				{
 				?>
 					<li><a class="btn " href="index.php?action=deconnection">Se déconnecter</a></li>
-					<li><a href="index.php">Bonjour <?= $_SESSION['pseudo'] ?></a></li>
+					<li><a href=
+						<?php
+						if (isset($_SESSION['group_id']) && $_SESSION['group_id'] == 1) 
+						{
+							echo "'admin/index.php'";
+						}
+						else
+						{	
+							echo "'index.php'";
+						}
+						?>
+						>Bonjour <?= $_SESSION['pseudo'] ?></a></li>
 				<?php
 				}
 				else 
