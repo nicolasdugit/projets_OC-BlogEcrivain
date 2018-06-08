@@ -23,8 +23,8 @@ try {
                 listPosts();
             }
             elseif ($_GET['action'] == 'modifPost') {
-                if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    modifPost($_GET['id']);
+                if (isset($_GET['post_id']) && $_GET['post_id'] > 0) {
+                    modifPost($_GET['post_id']);
                 }
                 else
                 {
@@ -32,9 +32,9 @@ try {
                 }
             }
             elseif ($_GET['action'] == 'updatePost') {
-                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (isset($_GET['post_id']) && $_GET['post_id'] > 0) {
                     if (!empty($_POST['newTitle']) && !empty($_POST['newContent'])) {
-                        updatePost(($_POST['newTitle']), ($_POST['newContent']), $_GET['id']);
+                        updatePost(($_POST['newTitle']), ($_POST['newContent']), $_GET['post_id']);
                     }
                     else {
                         throw new Exception('Tous les champs ne sont pas remplis !');

@@ -53,11 +53,11 @@ function modifPost($post_id)
 	require('view/backend/modifPostView.php');
 }
 
-function updatePost($newTitle, $newContent, $id)
+function updatePost($newTitle, $newContent, $post_id)
 {
     $postManager = new Postmanager();
 
-    $affectedLines = $postManager->updatePost($newTitle, $newContent, $id);
+    $affectedLines = $postManager->updatePost($newTitle, $newContent, $post_id);
 
     if ($affectedLines === false) 
     {
