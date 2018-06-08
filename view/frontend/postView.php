@@ -38,7 +38,7 @@
                             if ($comment['comment_report'] == false && $comment['comment_verify'] == false) 
                             { 
                             ?>
-                            <h5><a href="index.php?action=reportComment&amp;comId=<?= $comment['id'] ?>">signaler ce commentaire !</a></h5>
+                            <h5><a href="index.php?action=reportComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">signaler ce commentaire !</a></h5>
                             <?php
                             }
                             elseif ($comment['comment_report'] == true)
