@@ -18,7 +18,7 @@ try {
         elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    addComment(htmlspecialchars($_GET['id']), htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']));
+                    addComment(($_GET['id']), ($_POST['author']), ($_POST['comment']));
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis !');
@@ -45,7 +45,7 @@ try {
         elseif ($_GET['action'] == 'updateComment') {
             if (isset($_GET['comId']) && $_GET['comId'] > 0) {
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    updateComment(htmlspecialchars($_GET['comId']), htmlspecialchars($_POST['author']), htmlspecialchars($_POST['comment']), htmlspecialchars($_GET['postId']));
+                    updateComment(($_GET['comId']), ($_POST['author']), ($_POST['comment']), ($_GET['postId']));
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis !');
@@ -57,7 +57,7 @@ try {
         }
         elseif ($_GET['action'] == 'reportComment') {
             if (isset($_GET['comId']) && $_GET['comId'] > 0) {
-                reportComment(htmlspecialchars($_GET['comId']));
+                reportComment(($_GET['comId']), ($_GET['postId']));
             }
             else {
                 throw new Exception('Impossible de signaler le commentaire');
@@ -69,7 +69,7 @@ try {
         }
         elseif ($_GET['action'] == 'connection') {
             if ($_POST['pseudo'] && $_POST['pass']) {
-                connection(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']));
+                connection(($_POST['pseudo']), ($_POST['pass']));
             }
             else {
                 throw new Exception('Probleme identification');
@@ -97,7 +97,7 @@ try {
                         if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail'])) {
                             throw new Exception('Adresse mail non valide');
                         } else {
-                            inscription(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['pass']), htmlspecialchars($_POST['mail']));
+                            inscription(($_POST['pseudo']), ($_POST['pass']), ($_POST['mail']));
                         }
                     }
             }

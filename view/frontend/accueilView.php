@@ -10,13 +10,13 @@ $excerpt = substr($data['content'], 0, 1500);
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h3> <?= htmlspecialchars($data['title']) ?> </h3>
-                <h5> <em>Publié le le <?= $data['creation_date_fr'] ?></em> </h5>
-                <p>
-                    <?= nl2br(($excerpt)) , ' [...] ' ?>
-                    <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></h6>
-                    <br>
-                </p>
+                <h2><a href="index.php?action=post&amp;id=<?= $data['id'] ?>"> <?= htmlspecialchars($data['title']) ?></a></h2>
+                <p><?= $excerpt , ' [...] ' ?></p>
+                <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></h6>
+                <blockquote>
+                    <p>Jean Forteroche</p>
+                    <p class="small"> Publié le<?= $data['creation_date_fr'] ?> </p>
+                </blockquote>
             </div>
         </div>
     </div>

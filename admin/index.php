@@ -12,7 +12,7 @@ try {
             elseif ($_GET['action'] == 'publishPost') {
                 
                 if (!empty($_POST['title']) && !empty($_POST['content'])) {
-                    newPost(htmlspecialchars($_POST['title']), ($_POST['content']));
+                    newPost(($_POST['title']), ($_POST['content']));
                 }
                 else {
                     throw new Exception('Tous les champs ne sont pas remplis !');
@@ -34,7 +34,7 @@ try {
             elseif ($_GET['action'] == 'updatePost') {
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     if (!empty($_POST['newTitle']) && !empty($_POST['newContent'])) {
-                        updatePost(htmlspecialchars($_POST['newTitle']), ($_POST['newContent']), $_GET['id']);
+                        updatePost(($_POST['newTitle']), ($_POST['newContent']), $_GET['id']);
                     }
                     else {
                         throw new Exception('Tous les champs ne sont pas remplis !');

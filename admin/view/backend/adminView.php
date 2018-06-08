@@ -19,10 +19,11 @@
                     if ($data['comment_report'] == 1) 
                     {
                         ?>
-                        <h4 class="bg-warning">Par : <?= $data['author']  ?></h4>
-                        <p class="bg-danger"><?= nl2br($data['comment']) ?></p>
+                        <h4 class="bg-warning"><strong>Par : </strong><?= htmlspecialchars($data['author'])  ?></h4>
+                        <p class="bg-danger"><strong>Commentaire : </strong><?= htmlspecialchars($data['comment']) ?></p>
                         <a href="index.php?action=validateComment&amp;com_id=<?= $data['id'] ?>" class="btn btn-success">Valider</a>
                         <a href="index.php?action=deleteComment&amp;com_id=<?= $data['id'] ?>" class="btn btn-warning">Supprimer</a>
+                        <hr>
                         <?php
                     }
                 }
@@ -36,10 +37,11 @@
                     if ($data['comment_verify'] == 0 && $data['comment_report'] == 0) 
                     {
                         ?>
-                        <h4 class="bg-warning">Par : <?= $data['author']  ?></h4>
-                        <p class="bg-info"><?= nl2br($data['comment']) ?></p>
+                        <h4 class="bg-warning"><strong>Par : </strong><?= htmlspecialchars($data['author'])  ?></h4>
+                        <p class="bg-info"><strong>Commentaire : </strong><?= htmlspecialchars($data['comment']) ?></p>
                         <a href="index.php?action=validateComment&amp;com_id=<?= $data['id'] ?>" class="btn btn-success">Valider</a>
                         <a href="index.php?action=deleteComment&amp;com_id=<?= $data['id'] ?>" class="btn btn-warning">Supprimer</a>
+                        <hr>
                         <?php
                     }
                 }

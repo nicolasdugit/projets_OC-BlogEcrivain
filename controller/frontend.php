@@ -89,7 +89,7 @@ function updateComment($commentId, $author, $comment, $postId)
 }
 
 //Signalement d'un commentaire
-function reportComment($commentId)
+function reportComment($commentId, $postId)
 {
     $commentManager = new CommentManager();
 
@@ -101,7 +101,7 @@ function reportComment($commentId)
     }
     else 
     {
-        header('Location: index.php');
+        header('Location: index.php?action=post&id=' . $postId);
     }
 }
 

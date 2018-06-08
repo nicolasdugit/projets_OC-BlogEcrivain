@@ -18,11 +18,11 @@
             ?>
             <div class="col-md-12 maincontent">
                 <div class="page-header">
-                    <h1 class="page-title"><?= ($post['title']) ?></h1>
+                    <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
                     <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em> </h5>
                 </div>
                 <p>
-                    <?= nl2br(($excerpt)), ' [...]' ?>
+                    <?= $excerpt, ' [...]' ?>
                     <br>
                 </p>
                 <a class="btn btn-warning" href="index.php?action=modifPost&amp;id=<?= $post['id'] ?>">Modifier</a>
