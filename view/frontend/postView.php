@@ -66,7 +66,7 @@
                             <br>
                         </div>
                         <div>
-                            <button class="btn btn-danger" type="submit">Commenter</button>
+                            <button class="btn btn-success" type="submit">Commenter</button>
                         </div>
                     </form>
                 <?php
