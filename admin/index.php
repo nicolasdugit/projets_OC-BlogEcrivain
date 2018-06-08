@@ -46,8 +46,9 @@ try {
                 }
             }
             elseif ($_GET['action'] == 'deletePost') {
-                if (isset($_GET['id']) && $_GET['id'] > 0) {
-                    deletePost($_GET['id']);
+                if (isset($_GET['post_id']) && $_GET['post_id'] > 0) {
+                    deletePost($_GET['post_id']);
+                    // deleteCommentByPost($_GET['post_id']);
                 }
                 else 
                 {
