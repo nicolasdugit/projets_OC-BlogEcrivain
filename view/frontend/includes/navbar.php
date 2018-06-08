@@ -25,7 +25,7 @@
 							echo "'index.php'";
 						}
 						?>
-						>Bonjour <?= $_SESSION['pseudo'] ?></a></li>
+						>Bonjour <?= htmlspecialchars($_SESSION['pseudo']) ?></a></li>
 				<?php
 				}
 				else 
@@ -36,6 +36,6 @@
 				}
 				?>	
 			</ul>
-		</div><!--/.nav-collapse -->
+		</div>
 	</div>
 </div> 
