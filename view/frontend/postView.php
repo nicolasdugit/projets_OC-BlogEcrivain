@@ -11,7 +11,7 @@
                 <header class="page-header">
                     <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
                 </header>
-                <p><?= $post['content'] ?></p>
+                <div><?= $post['content'] ?></div>
                 <blockquote>
                     <p>Jean Forteroche</p>
                     <p class="small"> Publié le <?= $post['creation_date_fr'] ?> </p>

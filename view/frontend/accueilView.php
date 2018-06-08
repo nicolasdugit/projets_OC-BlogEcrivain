@@ -11,7 +11,7 @@ $excerpt = substr($data['content'], 0, 1500);
         <div class="row">
             <div class="col-sm-12">
                 <h2><a href="index.php?action=post&amp;id=<?= $data['id'] ?>"> <?= htmlspecialchars($data['title']) ?></a></h2>
-                <p><?= $excerpt , ' [...] ' ?></p>
+                <div><?= $excerpt , ' [...] ' ?></div>
                 <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></h6>
                 <blockquote>
                     <p>Jean Forteroche</p>

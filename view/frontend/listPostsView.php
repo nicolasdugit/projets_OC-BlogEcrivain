@@ -12,19 +12,19 @@
             <?php
             while ($post = $posts->fetch())
             {
-            $excerpt = substr($post['content'], 0, 1000);
+            $excerpt = substr(($post['content']), 0, 1000);
             ?>
-            <article class="col-md-12 maincontent">
+            <div class="col-md-12 maincontent">
                 <header class="page-header">
                     <h1 class="page-title"><a href="index.php?action=post&amp;id=<?= $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a></h1>
                 </header>
-                    <p><?= $excerpt, ' [...]' ?></p>
+                    <div><?= $excerpt, ' [...]' ?></div>
                     <h6><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Lire la suite</a></h6>
                 <blockquote>
                     <p>Jean Forteroche</p>
                     <p class="small"> Publié le <?= $post['creation_date_fr'] ?> </p>
                 </blockquote>
-            </article>
+            </div>
             <?php
             }
             ?>

@@ -19,8 +19,8 @@
             	<form action="index.php?action=updatePost&amp;post_id=<?= $_GET['post_id'] ?>" method="post">
 				<div class="form-group">
 					<label for="title">Titre du chapitre :</label><br>
-					<input class="form-control" type="text" name="newTitle" value="<?= $data['title'] ?>"><br>
-					<textarea class="form-control" id="mytextarea" name="newContent"><?= $data['content'] ?></textarea>
+					<input class="form-control" type="text" name="newTitle" value="<?= htmlspecialchars($data['title']) ?>"><br>
+					<textarea class="form-control" id="mytextarea" name="newContent"><?= htmlspecialchars($data['content']) ?></textarea>
 	            </div>
 				<div>
 					<button class="btn btn-warning" type="submit">Modifier</button>
