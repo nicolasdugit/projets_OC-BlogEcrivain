@@ -2,74 +2,34 @@
 
 <?php ob_start(); ?>
 
-<!-- container -->
     <div class="container">
-
         <ol class="breadcrumb">
             <li><a href="index.php">Accueil</a></li>
-            <li class="active">Blog</li>
+            <li class="active">Tous les chapitres</li>
         </ol>
 
         <div class="row">
-            <!-- Article main content -->
             <?php
-            if ($lastPost = $posts->fetch())
+            while ($post = $posts->fetch())
             {
-            $excerpt = substr($lastPost['content'], 0, 1500);
+            $excerpt = substr($post['content'], 0, 1000);
             ?>
-            <article class="col-md-8 maincontent">
+            <article class="col-md-12 maincontent">
                 <header class="page-header">
-                    <h1 class="page-title"><?= htmlspecialchars($lastPost['title']) ?></h1>
-                                 <h5><em>Publié le le <?= $lastPost['creation_date_fr'] ?></em> </h5>
+                    <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
                 </header>
-                                <p>
-                                    <?= nl2br(($excerpt)), ' [...]' ?>
-                                    <br />
-                                </p>
-                                <h6><a href="index.php?action=post&amp;id=<?= $lastPost['id'] ?>">Lire la suite</a></h6>
+                    <p><?= nl2br(($excerpt)), ' [...]' ?></p>
+                    <h6><a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Lire la suite</a></h6>
+                <blockquote>
+                    <p>Jean Forteroche</p>
+                    <p class="small"> Publié le <?= $post['creation_date_fr'] ?> </p>
+                </blockquote>
             </article>
             <?php
             }
             ?>
-            <!-- /Article -->
-           
-            
-            <!-- Sidebar -->
-            <aside class="col-md-4 sidebar sidebar-right">
-                <?php
-                while ($data = $posts->fetch())
-                {
-                $excerpt = substr($data['content'], 0, 500);
-                ?>
-                        <div class="row widget">
-                            <div class="col-xs-12">
-                                <h4>
-                                    <?= htmlspecialchars($data['title']) ?>
-                                </h4>
-                                 <h5><em>Publié le le <?= $data['creation_date_fr'] ?></em> </h5>
-                                
-                                <p>
-                                    <?= nl2br(($excerpt)) , ' [...]' ?>
-                                    <br />
-                                </p>
-                                <h6><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></h6>
-                            </div>
-                        </div>
-                <?php
-                }
-                $posts->closeCursor();
-                ?>
-            </aside>
-            <!-- /Sidebar -->
-
         </div>
-    </div>  <!-- /container -->
-
-
-
-
-
-
+    </div>
 
 <?php $content = ob_get_clean(); ?>
 
