@@ -3,23 +3,17 @@
 <?php ob_start(); ?>
 <!-- container -->
     <div class="container">
-
         <ol class="breadcrumb">
             <li><a href="index.php">Accueil</a></li>
             <li class="active">Blog</li>
         </ol>
-
         <div class="row">
-
             <article class="col-md-8 maincontent">
                 <header class="page-header">
                     <h1 class="page-title"><?= ($post['title']) ?></h1>
-                                 <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em> </h5>
+                    <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em></h5>
                 </header>
-                                <p>
-                                    <?= nl2br(($post['content'])) ?>
-                                    <br />
-                                </p>
+                <p><?= nl2br(($post['content'])) ?></p>
             </article>
 
             <aside class="col-md-4 sidebar sidebar-right">
@@ -27,68 +21,60 @@
                 while ($comment = $comments->fetch()) 
                 {
                 ?>
-                    <p><strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
-
-                    <?php 
-                    if (isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == $comment['author']) {
-                        ?>
-                            (<a href="index.php?action=selectComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">modifier</a>)</p>
-                        <?php
-                    }
-                    ?>
-
-                    <p><?= nl2br(($comment['comment'])) ?></p>
-
-
-                    <?php 
-                    if (isset($_SESSION['pseudo'])) {
-                        if ($comment['comment_report'] == false && $comment['comment_verify'] == false) 
-                        { 
-                        ?>
-                            <a href="index.php?action=reportComment&amp;comId=<?= $comment['id'] ?>">signaler ce commentaire !</a></p>
-                        <?php
-                        }
-                        elseif ($comment['comment_verify'] == true)
+                    <blockquote>
+                        <p><?= nl2br(($comment['comment'])) ?></p>
+                        <?php 
+                        if (isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == $comment['author']) 
                         {
-                        ?>
-                        <p>Commentaire vérifié</p>
-                        <?php
+                            ?>
+                            <h5><a href="index.php?action=selectComment&amp;comId=<?= $comment['id'] ?>&amp;postId=<?= $post['id'] ?>">modifier</a></h5>
+                            <?php
                         }
-                        else
-                        {
                         ?>
-                        <p>Commentaire signalé</p>
+                        <p class="small"><strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
                         <?php
+                        if (isset($_SESSION['pseudo'])) 
+                            {
+                            if ($comment['comment_report'] == false && $comment['comment_verify'] == false) 
+                            { 
+                            ?>
+                            <h5><a href="index.php?action=reportComment&amp;comId=<?= $comment['id'] ?>">signaler ce commentaire !</a></h5>
+                            <?php
+                            }
+                            elseif ($comment['comment_report'] == true)
+                            {
+                            ?>
+                            <h5 class="bg-danger">Commentaire signalé</h5>
+                            <?php
+                            }
                         }
-                    }
-                    ?>
+                        ?>
+                    </blockquote>
                 <?php
                 }
-
-                    if (isset($_SESSION['pseudo'])) {
+                if (isset($_SESSION['pseudo'])) 
+                {
                 ?>
-            <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-                <div>
-                    
-                    <label hidden for="author">Auteur</label><br />
-                    <input hidden type="text" id="author" name="author" value="<?= $_SESSION['pseudo'] ?>" />
-                </div>
-                <div>
-                    <label for="comment">Commentaire</label><br />
-                    <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
-                    <br>
-                </div>
-                <div>
-                    <button class="btn btn-danger" type="submit">Commenter</button>
-                </div>
-            </form>
+                    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+                        <div>                                
+                            <label hidden for="author">Auteur</label><br />
+                            <input hidden type="text" id="author" name="author" value="<?= $_SESSION['pseudo'] ?>" />
+                        </div>
+                        <div>
+                            <label for="comment">Commentaire</label><br />
+                            <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
+                            <br>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger" type="submit">Commenter</button>
+                        </div>
+                    </form>
                 <?php
                 }
                 ?>
             </aside>
-
-            </div>
         </div>
+    </div>
 
 <?php $content = ob_get_clean(); ?>
 
