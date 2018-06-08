@@ -57,7 +57,7 @@ try {
         }
         elseif ($_GET['action'] == 'reportComment') {
             if (isset($_GET['comId']) && $_GET['comId'] > 0) {
-                reportComment(htmlspecialchars($_GET['comId']));
+                reportComment(htmlspecialchars($_GET['comId']), htmlspecialchars($_GET['postId']));
             }
             else {
                 throw new Exception('Impossible de signaler le commentaire');
