@@ -33,7 +33,7 @@
                 <h3>Commentaires à modérer</h3>
                 <?php 
                 while ($data = $toValidateComments->fetch()) {
-                    if ($data['comment_verify'] == 0) 
+                    if ($data['comment_verify'] == 0 && $data['comment_report'] == 0) 
                     {
                         ?>
                         <h3><?= $data['author']  ?></h3>
