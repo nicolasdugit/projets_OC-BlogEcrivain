@@ -49,27 +49,17 @@
 		</p>
 	</div>
 	<!-- /Intro-->
-		
-	<?= $content ?>
-
-	<!-- /Highlights -->
-
 	<!-- container -->
-	<div class="container">
-
-
-
-
-</div>	<!-- /container -->
+	<div>
+		<?= $content ?>
+	</div>	
+	<!-- /container -->
 	<!-- Footer -->
 	<footer id="footer" class="top-space">
 		<?php include('view/frontend/includes/footer1.php') ;?>
 		<?php include('view/frontend/includes/footer2.php') ;?>
 	</footer>	
 	<!-- /Footer -->	
-
-
-
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
