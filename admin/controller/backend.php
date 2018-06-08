@@ -69,11 +69,13 @@ function updatePost($newTitle, $newContent, $id)
     }
 }
 
-function deletePost($id)
+function deletePost($post_id)
 {
     $postManager = new Postmanager();
+    $commentManager = new CommentManager();
 
-    $affectedLines = $postManager->deletePost($id);
+    $affectedLines = $postManager->deletePost($post_id);
+    $commentManager->deleteCommentByPost($post_id);
 
     if ($affectedLines === false) 
     {
