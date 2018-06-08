@@ -10,10 +10,10 @@
         <div class="row">
             <article class="col-md-8 maincontent">
                 <header class="page-header">
-                    <h1 class="page-title"><?= ($post['title']) ?></h1>
+                    <h1 class="page-title"><?= htmlspecialchars($post['title']) ?></h1>
                     <h5><em>Publié le le <?= $post['creation_date_fr'] ?></em></h5>
                 </header>
-                <p><?= nl2br(($post['content'])) ?></p>
+                <p><?= $post['content'] ?></p>
             </article>
 
             <aside class="col-md-4 sidebar sidebar-right">
@@ -22,7 +22,7 @@
                 {
                 ?>
                     <blockquote>
-                        <p><?= nl2br(($comment['comment'])) ?></p>
+                        <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
                         <?php 
                         if (isset($_SESSION['pseudo']) && $_SESSION['pseudo'] == $comment['author']) 
                         {
@@ -31,7 +31,7 @@
                             <?php
                         }
                         ?>
-                        <p class="small"><strong><?= ($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+                        <p class="small"><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
                         <?php
                         if (isset($_SESSION['pseudo'])) 
                             {
@@ -58,7 +58,7 @@
                     <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                         <div>                                
                             <label hidden for="author">Auteur</label><br />
-                            <input hidden type="text" id="author" name="author" value="<?= $_SESSION['pseudo'] ?>" />
+                            <input hidden type="text" id="author" name="author" value="<?= htmlspecialchars($_SESSION['pseudo']) ?>" />
                         </div>
                         <div>
                             <label for="comment">Commentaire</label><br />
