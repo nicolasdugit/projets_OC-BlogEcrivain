@@ -42,31 +42,14 @@
 	<div class="container text-center">
 		<br> <br>
 		<h2 class="thin">Page administration</h2>
-		
-
-            </div>
-        </div>
-    </div>
-		
-
 	</div>
-	<!-- /Intro-->
-		
-
-	<!-- /Highlights -->
-
 	<!-- container -->
 	<div class="container">
 
 		<?= $content ?>
 
-	</div>	<!-- /container -->
-	<footer id="footer" class="top-space">
-		
-	</footer>		
-
-
-
+	</div>
+	
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
